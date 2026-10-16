@@ -2,13 +2,16 @@
 
 ### Instalación
 
-:information_source: Las instrucciones que verás a continuación dependen de la versión de Windows que tengas. Por favor solo sigue las instrucciones que correspondan a tu versión de Windows :point_down:
+Después de reiniciar tu computadora, deberías ver una ventana de terminal diciendo WSL está retomando el proceso de instalación de Ubuntu. Cuando termine, iniciará Ubuntu.
 
-#### Windows 11
+Si la instalación de Ubuntu no se reanudó, primero intenta nuevamente:
+- Copia el siguiente comando (`Ctrl` + `C`)
+- Pégalo en la ventana de la terminal (`Ctrl` + `V` o haciendo clic derecho en la ventana)
+- Ejecútalo presionado `Enter`
+- Ejecuta `wsl --install`
 
-Si estás utilizando Windows 11, después de reiniciar tu computadora, deberías ver una ventana de terminal diciendo WSL está retomando el proceso de instalación de Ubuntu. Cuando termine, iniciará Ubuntu.
-
-#### Windows 10
+<details>
+<summary>Solución de problemas para Windows 10 (solo si es necesario, consulta con un profesor)</summary>
 
 Si tienes Windows 10, instala la terminal de Windows por medio de la Microsoft Store:
 
@@ -20,6 +23,7 @@ Si tienes Windows 10, instala la terminal de Windows por medio de la Microsoft S
 - Haz clic en `Get`
 
 :warning: ¡NO instales **Ubuntu 18.04 LTS** ni **Ubuntu 20.04**!
+
 
 <details>
   <summary>Desinstala las versiones incorrectas de Ubuntu</summary>
@@ -34,6 +38,8 @@ Si tienes Windows 10, instala la terminal de Windows por medio de la Microsoft S
 
 Cuando termine la instalación, el botón `Get` se transformará en un botón `Open`: Haz clic en él.
 
+</details>
+
 ### Primer uso
 
 La primera vez que lo abras, te pedirán que:
@@ -46,8 +52,6 @@ La primera vez que lo abras, te pedirán que:
 - Confírmalo
 
 :warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
-
-Ahora puedes cerrar la ventana de Ubuntu ya que está instalado en tu computadora.
 
 ### Chequea la versión WSL de Ubuntu
 
@@ -77,7 +81,6 @@ wsl -l -v
   :heavy_check_mark: Deberías obtener el siguiente mensaje en algunos segundos: `The conversion is complete`. Esto significa que la conversión ha sido completada.
 
   :x: Si no funciona, tendremos que asegurarnos de que los archivos de Ubuntu no estén comprimidos.
-</details>
 
 <details>
   <summary>Chequea si los archivos no están comprimidos</summary>
@@ -97,3 +100,17 @@ wsl -l -v
 </details>
 
 Ya puedes cerrar la ventana de la terminal.
+
+</details>
+
+### Comprueba tu nombre de usuario
+
+Escribe esto en la terminal de Ubuntu:
+
+```bash
+whoami
+```
+
+Debería devolver el nombre de usuario que elegiste anteriormente.
+
+:x: Si dice `root`, **contacta a un profesor** antes de continuar.

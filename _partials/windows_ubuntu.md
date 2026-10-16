@@ -2,13 +2,19 @@
 
 ### Installation
 
-:information_source: The following instructions depend on your version of Windows. Please execute only the instructions corresponding to your version :point_down:
+After restarting you computer, you should see a terminal window saying WSL is resuming the Ubuntu installation process. When it's done, Ubuntu will be launched.
 
-#### Windows 11
+If the Ubuntu installation did not resume, try it again: 
+- Press `Windows` + `R`
+- Type  `cmd`
+- Press **`Ctrl` + `Shift` + `Enter`**
+- Run `wsl --install`
 
-If you are running Windows 11, after restarting you computer, you should see a terminal window saying WSL is resuming the Ubuntu installation process. When it's done, Ubuntu will be launched.
 
-#### Windows 10
+<details>
+<summary>Troubleshooting for Windows 10 (only if needed, check with a TA)
+</summary>
+
 
 If you are running Windows 10, let's install Ubuntu throught the Microsoft Store:
 
@@ -34,6 +40,8 @@ If you are running Windows 10, let's install Ubuntu throught the Microsoft Store
 
 Once the installation is finished, the `Get` button becomes a `Open` button: click on it.
 
+</details>
+
 ### First launch
 
 At first launch, you will be asked some information:
@@ -47,53 +55,14 @@ At first launch, you will be asked some information:
 
 :warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `Enter`.
 
-You can close the Ubuntu window now that it is installed on your computer.
+### Check your username
 
-### Check the WSL version of Ubuntu
-
-- Press `Windows` + `R`
-- Type  `cmd`
-- Press `Enter`
-
-Type the following command:
+Type this in the Ubuntu terminal:
 
 ```bash
-wsl -l -v
+whoami
 ```
 
-:heavy_check_mark: If the version of Ubuntu WSL is 2, you are good to go :+1:
+It should return the username you chose before.
 
-:x: If the version of Ubuntu WSL is 1, we will need to convert it to version 2.
-
-<details>
-  <summary>Convert Ubuntu WSL V1 to V2</summary>
-
-  In the Command Prompt window, type:
-
-  ```bash
-  wsl --set-version Ubuntu 2
-  ```
-
-  :heavy_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
-
-  :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
-</details>
-
-<details>
-  <summary>Check for Uncompressed Files</summary>
-
-  - Press `Windows` + `R`
-  - Type  `%localappdata%\Packages`
-  - Press `Enter`
-  - Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
-  - Right Click on the `LocalState` folder
-  - Click on `Properties`
-  - Click on `Advanced`
-  - Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
-
-  Apply changes to this folder only and try to convert the Ubuntu WSL version again.
-
-  :x: If the conversion still does not work, please **contact a teacher**.
-</details>
-
-You can now close this terminal window.
+:x: It if says `root`, **contact a TA** before continuing!

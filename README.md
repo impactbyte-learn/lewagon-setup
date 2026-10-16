@@ -6,13 +6,17 @@
 
 Haga clic en <a href="README.es.md">este enlace</a> para acceder a la versión en español de la configuración.
 
+## Em Português?
+
+Clique <a href="README.pt.md">neste link</a> para acessar a versão em português da configuração.
+
 ## En Français ?
 
 Clique sur <a href="README.fr.md">ce lien</a> pour accéder à la version française du setup.
 
 ## In English
 
-Setup guides for [Le Wagon](https://www.lewagon.com) Web Development course. Please choose your operating system (OS):
+Setup guides for [Le Wagon](https://www.lewagon.com) AI Software Development course. Please choose your operating system (OS):
 
 <table>
   <tr>

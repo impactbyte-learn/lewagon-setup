@@ -1,6 +1,7 @@
+
 # Setup instructions
 
-You will find below the instructions to set up your computer for [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time).
+You will find below the instructions to set up your computer for [Le Wagon AI Software Development course](https://www.lewagon.com/web-development-course/full-time).
 
 Please **read them carefully and execute all commands in the following order**.
 
@@ -11,37 +12,6 @@ You can also have a look at [our cheatsheets](https://github.com/lewagon/setup/t
 Let's start :rocket:
 
 
-## Zoom
-
-To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
-
-:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
-
-Go to [zoom.us/download](https://zoom.us/download).
-
-Under **Zoom Client** click the **Download** button.
-
-Open the file you have just downloaded to install the app.
-
-Open the Zoom app.
-
-If you already have a Zoom account, sign in using your credentials.
-
-If not, click on the **Sign Up Free** link:
-
-![Sign Up Free to Zoom](images/zoom_sign_up_free.png)
-
-You will be redirected to Zoom's website to complete a form.
-
-When it's done, go back to the Zoom app and sign in using your credentials.
-
-You should then see a screen like this:
-
-![Zoom Home Screen](images/zoom_home_screen.png)
-
-You can now close the Zoom app.
-
-
 ## GitHub account
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
@@ -49,6 +19,8 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
 ![GitHub picture](images/github_picture.png)
+
+:point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
 
 
 ## Visual Studio Code
@@ -110,44 +82,45 @@ Copy-paste the following commands in your terminal:
 
 ```bash
 code --install-extension ms-vscode.sublime-keybindings
-```
-
-```bash
 code --install-extension emmanuelbeziat.vscode-great-icons
-```
-
-```bash
 code --install-extension github.github-vscode-theme
-```
-
-```bash
 code --install-extension MS-vsliveshare.vsliveshare
-```
-
-```bash
-code --install-extension rebornix.ruby
-```
-
-```bash
+code --install-extension shopify.ruby-lsp
 code --install-extension dbaeumer.vscode-eslint
-```
-
-```bash
 code --install-extension Rubymaniac.vscode-paste-and-indent
-```
-
-```bash
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension anteprimorac.html-end-tag-labels
+code --install-extension rayhanw.erb-helpers
 ```
 
 Here is a list of the extensions you are installing:
+
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### VS Code AI Features
+
+VS Code includes many powerful **AI features**, which are a great tool once you already know how to code.
+
+That said, relying on AI too early can hide important concepts and make debugging harder to understand. Once you’re comfortable with the fundamentals, you’ll know when and how to use AI effectively — without letting it do the thinking for you.
+
+For the start of the bootcamp, we’ll disable these features. At the right point in the course, we’ll reenable them so you can put them to good use.
+
+In **VS Code**:
+
+1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P`.
+1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
+   ![The Command Palette at the top of the screen](images/vscode_find_aifeatures.png)
+1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
+   ![Check the disable option](images/vscode_disable_aifeatures.png)
+
+Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
 
 ### Live Share configuration
@@ -170,6 +143,36 @@ That's it, you're good to go!
 
 ## Command line tools
 
+### Check the locale
+
+The locale is a mechanism allowing to customize programs to your language and country.
+
+Let's verify that the default locale is set to English, please type this in the Ubuntu terminal:
+
+```bash
+locale
+```
+
+If the output does not contain `LANG=en_US.UTF-8`, run the following command in a Ubuntu terminal to install the english locale:
+
+```bash
+sudo locale-gen en_US.UTF-8
+```
+
+If after, you receive a warning (`bash: warning: setlocale: LC_ALL: cannot change locale (en_US.utf-8)`) in your terminal, please do the following:
+
+<details>
+  <summary>Generate locale</summary>
+
+Please, run this lines in your terminal.
+
+```bash
+sudo update-locale LANG=en_US.UTF8
+sudo apt-get update
+sudo apt-get install language-pack-en language-pack-en-base manpages
+```
+</details>
+
 ### Zsh & Git
 
 Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
@@ -185,7 +188,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl git imagemagick jq unzip vim zsh tree
+sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
 ```
 
 These commands will ask for your password: type it in.
@@ -255,25 +258,27 @@ In this section, we will use [GitHub CLI](https://cli.github.com/) to interact w
 
 It should already be installed on your computer from the previous commands.
 
+We will use the GitHub CLI (`gh`) to connect to GitHub using *SSH*, a protocol to log in using SSH keys instead of the well known username/password pair.
+
 First in order to **login**, copy-paste the following command in your terminal:
 
-:warning: **DO NOT edit the `email`**
+:warning: **DO NOT edit the `email`** — Even though `user:email` looks like a placeholder for your actual email address, it isn't — do not replace it.
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh will ask you few questions:
+`gh` will ask you few questions:
 
-`What is your preferred protocol for Git operations?` With the arrows, choose `SSH` and press `Enter`. SSH is a protocol to log in using SSH keys instead of the well known username/password pair.
+- `Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
 
-`Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
+  If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
 
-If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **FOR MOST PEOPLE:** Just press `Enter` to skip. You don't need a passphrase for the bootcamp and it would prompt you every time you use the key. There is a risk, however, that if someone steals your laptop, they could then push to GitHub.
+  - **IF SECURITY IS REALLY IMPORTANT TO YOU:** Enter a passphrase of your choice and press `Enter`. It's _really_ important that if you enter a passphrase, you write it down somewhere immediately and do not lose/forget it. You will need to enter this frequently.
 
-`Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
-
-:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `Enter`.
+- `Title for your SSH key`. You can leave it at the proposed "GitHub CLI", press `Enter`.
 
 You will then get the following output:
 
@@ -368,7 +373,8 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 :point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
 
-:warning: You **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress.
+:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
+
 
 Please now **reset** your terminal by running:
 
@@ -376,22 +382,7 @@ Please now **reset** your terminal by running:
 exec zsh
 ```
 
-
-## Disable SSH passphrase prompt
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
-
-First, open the `.zshrc` file:
-
-```bash
-code ~/.zshrc
-```
-
-Then:
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` at the end of the plugins list
-
-:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
+_This reloads your shell so it picks up the new configuration._
 
 
 ## rbenv
@@ -410,7 +401,7 @@ rm -rf ~/.rbenv
 Then in the terminal, run:
 
 ```bash
-sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
+sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev libyaml-dev
 ```
 
 ```bash
@@ -435,14 +426,14 @@ Now, you are ready to install the latest [ruby](https://www.ruby-lang.org/en/) v
 Run this command, it will **take a while (5-10 minutes)**
 
 ```bash
-rbenv install 3.1.2
+rbenv install 3.3.5
 ```
 
 Once the ruby installation is done, run this command to tell the system
-to use the 3.1.2 version by default.
+to use the 3.3.5 version by default.
 
 ```bash
-rbenv global 3.1.2
+rbenv global 3.3.5
 ```
 
 **Reset** your terminal and check your Ruby version:
@@ -457,7 +448,7 @@ Then run:
 ruby -v
 ```
 
-:heavy_check_mark: If you see something starting with `ruby 3.1.2p` then you can proceed :+1:
+:heavy_check_mark: If you see something starting with `ruby 3.3.5` then you can proceed :+1:
 
 :x: If not, **ask a teacher**
 
@@ -483,10 +474,16 @@ gem sources -l
 
 In the ruby world, we call external libraries `gems`: they are pieces of ruby code that you can download and execute on your computer. Let's install some!
 
+First, we'll update `bundler`, which is what lets us install gems:
+
+```bash
+gem update bundler
+```
+
 In your terminal, copy-paste the following command:
 
 ```bash
-gem install colored faker http pry-byebug rake rails rest-client rspec rubocop-performance sqlite3
+gem install colored faker http pry-byebug rake rails:8.1.1 rest-client rspec rubocop-performance sqlite3:2.8.1 activerecord:8.1.1 ruby-lsp
 ```
 
 :heavy_check_mark: If you get `xx gems installed`, then all good :+1:
@@ -534,7 +531,7 @@ You should see a version. If not, ask a teacher.
 Now let's install node:
 
 ```bash
-nvm install 16.15.1
+nvm install 20.17.0
 ```
 
 When the installation is finished, run:
@@ -543,7 +540,7 @@ When the installation is finished, run:
 node -v
 ```
 
-If you see `v16.15.1`, the installation succeeded :heavy_check_mark: You can then run:
+If you see `v20.17.0`, the installation succeeded :heavy_check_mark: You can then run:
 
 ```bash
 nvm cache clear
@@ -559,8 +556,11 @@ nvm cache clear
 In a terminal, run the following commands:
 
 ```bash
-npm install --global yarn
+corepack enable
+yarn set version stable
 ```
+
+⚠️ If you see any error messages, try running `npm install -g corepack` and then run the commands above again.
 
 ```bash
 exec zsh
@@ -584,7 +584,7 @@ In a few weeks, we'll talk about databases and SQL. [SQLite](https://sqlite.org/
 In a terminal, execute the following commands:
 
 ```bash
-sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install sqlite3 libsqlite3-dev pkg-config
 ```
 
 Then run the following command:
@@ -638,23 +638,17 @@ curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb 
 
 ## Kitt
 
-:warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
-
-If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
-
-Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
-
-Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
-
-Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
+You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform). When submitting your onboarding form on Kitt, you should have received two additional invitations:
 
 - One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
+If you haven't, please contact your teaching team.
+
 
 ## Slack
 
-[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
+[Slack](https://slack.com/) is a communication platform pretty popular in the tech industry.
 
 ### Installation
 
@@ -675,8 +669,11 @@ The idea is that you'll have Slack open all day, so that you can share useful li
 
 To ensure that everything is working fine for video calls, let's test your camera and microphone:
 - Open the Slack app
-- In any channel message bar type `/call --test` and press `Enter`
-- Click on the "Start test" green button
+- Click your profile picture in the top right.
+- Select `Preferences` from the menu.
+- Click `Audio & video` in the left-side column.
+- Below `Troubleshooting`, click `Run an audio, video and screensharing test`. The test will open in a new window.
+- Check that your preferred speaker, microphone and camera devices appear in the drop-down menus, then click `Start test`.
 
 ![Check microphone and webcam with Slack](images/slack_call_test.png)
 
@@ -737,12 +734,11 @@ You must pin:
 - VS Code
 - Your Internet browser
 - Slack
-- Zoom
 
 
 ## Setup completed!
 
-Your computer is now all set for [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
+Your computer is now all set for [Le Wagon AI Software Development course](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
 
 Enjoy the bootcamp, you will nail it :rocket:
 

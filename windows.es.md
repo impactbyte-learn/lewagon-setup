@@ -1,41 +1,10 @@
 # Instrucciones de la configuración
 
-Aquí abajo encontrarás las instrucciones para la configuración que tu computadora necesita para el [curso de Desarrollo Web de Le Wagon](https://www.lewagon.com/web-development-course/full-time).
+Aquí abajo encontrarás las instrucciones para la configuración que tu computadora necesita para el [curso de AI Software Development de Le Wagon](https://www.lewagon.com/web-development-course/full-time).
 
 Por favor, **léelas cuidadosamente y ejecuta todos los comandos en el orden indicado**. Si tienes algún problema, no dudes en pedirle ayuda a tu profesor :raising_hand:
 
 ¡Comencemos! :rocket:
-
-
-## Zoom
-
-Para poder interactuar cuando no estemos en el mismo lugar físico, usaremos [Zoom](https://zoom.us/), una herramienta de videoconferencia.
-
-:warning: Si ya tienes Zoom instalado, por favor asegúrate de que por lo menos tienes versión **5.6**.
-
-Ve a [zoom.us/download](https://zoom.us/download).
-
-Haz clic en el botón **Download** debajo de **Zoom Client**.
-
-Abre el archivo que acabas de descargar para instalar la aplicación.
-
-Abre la aplicación Zoom.
-
-Si ya tienes una cuenta Zoom, inicia sesión con tus credenciales.
-
-Si no, haz clic en el enlace **Sign Up Free**, que significa registrarse gratuitamente:
-
-![Registrarse gratuitamente en Zoom](images/zoom_sign_up_free.png)
-
-Te redireccionarán a la página de Zoom para que completes un formulario.
-
-Cuando termines, regresa a la aplicación Zoom e inicia sesión usando tus credenciales.
-
-Deberías ver una pantalla como la siguiente:
-
-![Pantalla de inicio de Zoom](images/zoom_home_screen.png)
-
-Ya puedes cerrar la aplicación Zoom.
 
 
 ## Cuenta GitHub
@@ -46,12 +15,18 @@ Ya puedes cerrar la aplicación Zoom.
 
 ![Foto GitHub](images/github_picture.png)
 
+:point_right: **[Habilita la Autenticación de Dos Factores (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub te enviará mensajes de texto con un código cuando intentes iniciar sesión. Esto es importante para la seguridad y también pronto será necesario para contribuir código en GitHub.
+
 
 ## La versión de Windows
 
 Antes de comenzar, necesitamos verificar que la versión de Windows instalada en tu computadora sea compatible con estas instrucciones de configuración.
 
 ### Windows 10 o Windows 11
+
+> :warning: **Nota sobre Windows 10 y seguridad**
+>
+> La configuración del bootcamp de Le Wagon funciona en Windows 10. Dicho esto, recomendamos encarecidamente actualizar a Windows 11. Desde el 14 de octubre de 2025 Microsoft finalizó el soporte para Windows 10, lo que significa que ya no recibirá actualizaciones de seguridad y podría poner tu equipo en riesgo. Para más detalles, consulta la [guía de Microsoft](https://support.microsoft.com/en-us/windows/windows-10-support-has-ended-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281). Si tu equipo no puede ejecutar Windows 11, considera cambiar a Ubuntu.
 
 Para poder configurar tu computadora, necesitas tener **Windows 10 o Windows 11** instalado.
 
@@ -60,65 +35,54 @@ Para chequear la versión de tu Windows:
 - Escribe  `winver`
 - Presiona `Enter`
 
-:heavy_check_mark: Si las primeras palabras de esta ventana son **Windows 10 o Windows 11**, entonces todo está bien y puedes continuar trabajando en la configuración :+1:
+:heavy_check_mark: Si las primeras palabras de esta ventana son **Windows 11**, entonces todo está bien y puedes continuar trabajando en la configuración :+1:
 
-:x: Si no es el caso, no puedes continuar. Primero debes actualizar tu versión a Windows 10 :point_down:
+:heavy_check_mark: Si las primeras palabras de esta ventana son **Windows 10**, verifica el **número de la versión**:
 
-<details>
-  <summary>Actualizar a Windows 10</summary>
+- :heavy_check_mark: Si dice al menos `2004`, entonces todo está bien :+1:
 
-  - Descarga Windows 10 desde [Microsoft](https://www.microsoft.com/software-download/windows10ISO)
-  - Instálalo. Debería tomar como una hora pero realmente depende de tu computadora.
-  - Cuando termine la instalación, ejecuta los comandos de aquí arriba :point_up: para chequear que tengas **Windows 10**.
-</details>
+- :x: Si es inferior a `2004`, debes actualizar tu versión.
 
-:information_source: [La actualización de Windows 11 está en curso en este momento](https://www.microsoft.com/en-us/windows/get-windows-11). Esto significa que puede que esté o que aún no esté disponible para tu computadora.
+- <details>
+  <summary>Cómo instalar las últimas actualizaciones?</summary>
 
-:warning: **Si tienes Windows 10 instalado, no necesitas actualizarlo a Windows 11 para hacer esta configuración**.
-
-### Últimas actualizaciones
-
-Una vez que estés seguro de que estés usando Windows 10 o 11, instala las siguientes actualizaciones.
-
-Abre Windows Update:
-- Presiona `Windows` + `R`
-- Escribe `ms-settings:windowsupdate`
-- Presiona `Enter`
-- Haz clic en `Check updates`
-
-:heavy_check_mark: Si tienes una marca verde y el siguiente mensaje "You're up to date", entonces todo está bien :+1:
-
-:warning: Si obtienes una exclamación roja y el siguiente mensaje "Update available", por favor instala las actualizaciones y repite el proceso hasta que diga que todo está actualizado :loop:
-
-:x: Si obtienes un mensaje de error diciendo que Windows no puede aplicar las actualizaciones, por favor **contacta a un profesor**.
-
-<details>
-  <summary>Activa Windows Update Service para resolver las Actualizaciones</summary>
-
-  Algunos antivirus y programas deshabilitan las actualizaciones que necesitamos y luego se muestra un error. ¡Solucionemos esto!
+  Abre Windows Update:
   - Presiona `Windows` + `R`
-  - Escribe `services.msc`
+  - Escribe `ms-settings:windowsupdate`
   - Presiona `Enter`
-  - Haz doble clic en `Windows Update Service`
-  - Coloca su `Startup` en `Automatic`
-  - Haz clic en `Start`
-  - Haz clic en `Ok`
-  ¡Ahora intenta instalar las actualizaciones nuevamente!
-</details>
+  - Haz clic en `Check updates`
 
-### Requisito mínimo para la versión
+  :heavy_check_mark: Si tienes una marca verde y el siguiente mensaje "You're up to date", entonces todo está bien :+1:
 
-Algunas de las herramientas que necesitamos han salido con la versión `1903` **o superior** de Windows 10, así que necesitamos asegurarnos de que al menos tengamos esa.
+  :warning: Si obtienes una exclamación roja y el siguiente mensaje "Update available", por favor instala las actualizaciones y repite el proceso hasta que diga que todo está actualizado :loop:
 
-- Presiona `Windows` + `R`
-- Escribe  `winver`
-- Presiona `Enter`
+  :x: Si obtienes un mensaje de error diciendo que Windows no puede aplicar las actualizaciones, por favor **contacta a un profesor**.
 
-Verifica el **número de la versión**:
+  <details>
+    <summary>Activa Windows Update Service para resolver las Actualizaciones</summary>
 
-:heavy_check_mark: Si dice al menos `1903`, entonces todo está bien :+1:
+    Algunos antivirus y programas deshabilitan las actualizaciones que necesitamos y luego se muestra un error. ¡Solucionemos esto!
+    - Presiona `Windows` + `R`
+    - Escribe `services.msc`
+    - Presiona `Enter`
+    - Haz doble clic en `Windows Update Service`
+    - Coloca su `Startup` en `Automatic`
+    - Haz clic en `Start`
+    - Haz clic en `Ok`
+    ¡Ahora intenta instalar las actualizaciones nuevamente!
+  </details>
 
-:x: Si es inferior a `1903`, por favor **contacta a un profesor**.
+  Verifica el número de la versión:
+
+  - Presiona `Windows` + `R`
+  - Escribe  `winver`
+  - Presiona `Enter`
+
+  :heavy_check_mark: Si dice al menos `2004`, entonces todo está bien :+1:
+
+  :x: Si es inferior a `2004`, por favor **contacta a un profesor**.
+
+  </details>
 
 
 ## Virtualización
@@ -164,21 +128,17 @@ Normalmente ya es el caso en muchas computadoras. Verifiquemos:
 
 WSL es el ambiente de entorno que estamos usando para usar Ubuntu. Puedes aprender más sobre WSL [aquí](https://docs.microsoft.com/en-us/windows/wsl/faq).
 
-:information_source: Las instrucciones que verás a continuación dependen de la versión de Windows que tengas. Por favor ejecuta solamente las instrucciones que correspondan a tu versión :point_down:
+Instalaremos WSL 2 y Ubuntu con un comando a través de la Windows Command Prompt.
 
-### Windows 11
-
-Si usas Windows 11, instalaremos WSL 2 y Ubuntu con un comando a través de la terminal de Windows.
-
-:warning: en esta instrucción, utiliza el atajo `Ctrl` + `Shift` + `Enter` para usar la **terminal de Windows** con privilegios de administrador en lugar de simplemente hacer clic en `Ok` o presionar `Enter`.
+:warning: en esta instrucción, utiliza el atajo `Ctrl` + `Shift` + `Enter` para usar la **Windows Command Prompt** con privilegios de administrador en lugar de simplemente hacer clic en `Ok` o presionar `Enter`.
 
 - Presiona `Windows` + `R`
-- Escribe `wt`
+- Escribe `cmd`
 - Presiona **`Ctrl` + `Shift` + `Enter`**
 
 :warning: tal vez tengas que aceptar la confirmación UAC sobre el cambio en los privilegios.
 
-Un ventana de terminal azul aparecerá:
+Un ventana de terminal aparecerá:
 - Copia el siguiente comando (`Ctrl` + `C`)
 - Pégalo en la ventana de la terminal (`Ctrl` + `V` o haciendo clic derecho en la ventana)
 - Ejecútalo presionado `Enter`
@@ -191,11 +151,10 @@ wsl --install
 
 :x: Si obtienes un mensaje de error (o si ves algún texto en rojo en la ventana), por favor **contacta a un profesor**
 
-### Windows 10
+<details>
+<summary>Solución de problemas para Windows 10 (solo si es necesario, consulta con un profesor)</summary>
 
-#### Instalación de WSL 1
-
-Si tienes Windows 10, primero instalaremos WSL 1 por medio de la Terminal de PowerShell.
+#### Para Windows 10 < 2004: instala primero WSL 1
 
 :warning: en esta instrucción, utiliza el atajo `Ctrl` + `Shift` + `Enter` para usar **Windows PowerShell** con privilegios de administrador en lugar de hacer clic en `Ok` o presionar `Enter`.
 
@@ -226,7 +185,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 :x: Si obtienes un mensaje de error (o si ves algún texto en rojo en la ventada), por favor **contacta a un profesor**
 
-#### Actualización a WSL 2
+#### Para Windows 10 con WSL 1: Actualización a WSL 2
 
 Si tienes Windows 10, actualizaremos WSL a la versión 2.
 
@@ -244,7 +203,7 @@ Cuando se reinicie tu computadora, descarga el instalador de WSL2.
 
 :x: Si obtienes el siguiente error "This update only applies to machines with the Windows Subsystem for Linux", **haz clic derecho** en el programa y selecciona `uninstall`; esta vez deberías poder instalarlo sin problemas.
 
-#### Coloca WSL 2 como el Subsistema Windows por defecto para Linux
+#### Para Windows 10 con WSL 1: Coloca WSL 2 como el Subsistema Windows por defecto para Linux
 
 Si tienes Windows 10, pondremos la versión predeterminada de WSL en 2.
 
@@ -277,18 +236,23 @@ wsl --set-default-version 2
   :information_source: Si tienes Windows 10 **Home edition**, la feature Hyper-V no está disponible para su sistema operativo. No es un bloqueo y puedes continuar con las siguientes instrucciones aquí abajo :ok_hand:
 </details>
 
+</details>
+
 
 ## Ubuntu
 
 ### Instalación
 
-:information_source: Las instrucciones que verás a continuación dependen de la versión de Windows que tengas. Por favor solo sigue las instrucciones que correspondan a tu versión de Windows :point_down:
+Después de reiniciar tu computadora, deberías ver una ventana de terminal diciendo WSL está retomando el proceso de instalación de Ubuntu. Cuando termine, iniciará Ubuntu.
 
-#### Windows 11
+Si la instalación de Ubuntu no se reanudó, primero intenta nuevamente:
+- Copia el siguiente comando (`Ctrl` + `C`)
+- Pégalo en la ventana de la terminal (`Ctrl` + `V` o haciendo clic derecho en la ventana)
+- Ejecútalo presionado `Enter`
+- Ejecuta `wsl --install`
 
-Si estás utilizando Windows 11, después de reiniciar tu computadora, deberías ver una ventana de terminal diciendo WSL está retomando el proceso de instalación de Ubuntu. Cuando termine, iniciará Ubuntu.
-
-#### Windows 10
+<details>
+<summary>Solución de problemas para Windows 10 (solo si es necesario, consulta con un profesor)</summary>
 
 Si tienes Windows 10, instala la terminal de Windows por medio de la Microsoft Store:
 
@@ -300,6 +264,7 @@ Si tienes Windows 10, instala la terminal de Windows por medio de la Microsoft S
 - Haz clic en `Get`
 
 :warning: ¡NO instales **Ubuntu 18.04 LTS** ni **Ubuntu 20.04**!
+
 
 <details>
   <summary>Desinstala las versiones incorrectas de Ubuntu</summary>
@@ -314,6 +279,8 @@ Si tienes Windows 10, instala la terminal de Windows por medio de la Microsoft S
 
 Cuando termine la instalación, el botón `Get` se transformará en un botón `Open`: Haz clic en él.
 
+</details>
+
 ### Primer uso
 
 La primera vez que lo abras, te pedirán que:
@@ -326,8 +293,6 @@ La primera vez que lo abras, te pedirán que:
 - Confírmalo
 
 :warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
-
-Ahora puedes cerrar la ventana de Ubuntu ya que está instalado en tu computadora.
 
 ### Chequea la versión WSL de Ubuntu
 
@@ -357,7 +322,6 @@ wsl -l -v
   :heavy_check_mark: Deberías obtener el siguiente mensaje en algunos segundos: `The conversion is complete`. Esto significa que la conversión ha sido completada.
 
   :x: Si no funciona, tendremos que asegurarnos de que los archivos de Ubuntu no estén comprimidos.
-</details>
 
 <details>
   <summary>Chequea si los archivos no están comprimidos</summary>
@@ -377,6 +341,20 @@ wsl -l -v
 </details>
 
 Ya puedes cerrar la ventana de la terminal.
+
+</details>
+
+### Comprueba tu nombre de usuario
+
+Escribe esto en la terminal de Ubuntu:
+
+```bash
+whoami
+```
+
+Debería devolver el nombre de usuario que elegiste anteriormente.
+
+:x: Si dice `root`, **contacta a un profesor** antes de continuar.
 
 
 ## Visual Studio Code
@@ -412,7 +390,7 @@ Luego abre VS Code desde la terminal:
 code .
 ```
 
-:heavy_check_mark: Si ves `WSL: Ubuntu` en una caja verde en la esquina inferior izquierda de la ventana de VS Code, entonces todo está bien y puedes continuar :+1:
+:heavy_check_mark: Si ves `WSL: Ubuntu` en la esquina inferior izquierda de la ventana de VS Code, entonces todo está bien y puedes continuar :+1:
 
 ![WSL Ubuntu Remote](images/windows_remote_wsl.png)
 
@@ -427,8 +405,10 @@ code .
 
 Si estás utilizando Windows 11, la terminal de Windows ya está instalada y puedes ir a la siguiente sección :point_down:
 
+Si tienes Windows 10, instala la terminal de Windows. Verás que es una terminal moderna.
 
-Si tienes Windows 10, instala la terminal de Windows. Verás que es una terminal moderna:
+<details>
+<summary>**Windows 10**: Instalar Windows Terminal</summary>
 
 - Haz clic en `Start`
 - Escribe `Microsoft Store`
@@ -452,6 +432,8 @@ Si tienes Windows 10, instala la terminal de Windows. Verás que es una terminal
 </details>
 
 Cuando termine la instalación, el botón `Install` se transformará en un botón `Launch`: haz clic en él.
+
+</details>
 
 ### Ubuntu como terminal predeterminada
 
@@ -486,7 +468,7 @@ Luego deshabilita el warning para copiar y pegar comandos entre Windows y Ubuntu
 - Agrega la siguiente línea debajo de eso:
 
 ```bash
-"multiLinePasteWarning": false,
+"warning.multiLinePaste": false,
 ```
 
 :warning: ¡No olvides la coma al final de la línea!
@@ -512,20 +494,42 @@ code --install-extension ms-vscode.sublime-keybindings
 code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension github.github-vscode-theme
 code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension rebornix.ruby
+code --install-extension shopify.ruby-lsp
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension Rubymaniac.vscode-paste-and-indent
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension anteprimorac.html-end-tag-labels
+code --install-extension marcoroth.herb-lsp
+code --install-extension rayhanw.erb-helpers
 ```
 
 Aquí está la lista de las extensiones que estás instalando:
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### Funciones de IA en VS Code
+
+VS Code incluye muchas y potentes **funciones de IA**, que son una gran herramienta una vez que ya sabes programar.
+
+Dicho esto, depender de la IA demasiado pronto puede ocultar conceptos importantes y dificultar la comprensión de la depuración. Una vez que estés cómodo con los fundamentos, sabrás cuándo y cómo usar la IA de forma eficaz —sin dejar que haga el trabajo por ti.
+
+Para el inicio del bootcamp, desactivaremos estas funciones. Llegado el momento apropiado en el curso, las volveremos a habilitar para que puedas utilizarlas bien.
+
+En **VS Code**:
+
+1. Abramos la "Paleta de comandos" de VS Code: escribe `Ctrl-Shift-P`.
+1. Se abrirá la Paleta de comandos: una pequeña caja de texto en la parte superior de la pantalla. Empieza a escribir `aifeatures` hasta que veas "Chat: Learn How to Hide AI features". Haz clic en ella.
+  ![The Command Palette at the top of the screen](images/vscode_find_aifeatures.png)
+1. Esto abrirá la configuración y te mostrará la opción "Disable and hide built-in AI features ...". Marca la casilla delante de esa opción.
+  ![Check the disable option](images/vscode_disable_aifeatures.png)
+
+Más adelante, si quieres **volver a habilitar** las funciones de IA, puedes seguir las mismas instrucciones para desmarcar la casilla.
 
 
 ### Configuración de Live Share
@@ -548,6 +552,36 @@ Eso es todo. ¡Ya puedes continuar!
 
 ## Herramientas de línea de comando
 
+### Comprueba la configuración regional (locale)
+
+La "locale" es un mecanismo que permite adaptar los programas a su idioma y país.
+
+Comprobemos que la configuración regional por defecto es el inglés:
+
+```bash
+locale
+```
+
+Si la salida no contiene `LANG=en_US.UTF-8`, ejecute el siguiente comando en un Ubuntu terminal para instalar la locale inglesa:
+
+```bash
+sudo locale-gen en_US.UTF-8
+```
+
+Si después, recibes una advertencia (`bash: warning: setlocale: LC_ALL: cannot change locale (en_US.utf-8)`) en tu terminal, por favor haz lo siguiente:
+
+<details>
+  <summary>Generar la configuración regional<>/summary>
+
+Por favor, ejecuta estas líneas en tu terminal.
+
+```bash
+sudo update-locale LANG=en_US.UTF8
+sudo apt-get update
+sudo apt-get install language-pack-en language-pack-en-base manpages
+```
+</details>
+
 ### Zsh & Git
 
 En lugar de usar el `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)) predeterminado, usaremos `zsh`.
@@ -563,7 +597,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl git imagemagick jq unzip vim zsh
+sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
 ```
 
 Estos comandos te pedirán tu contraseña: escríbela.
@@ -676,6 +710,7 @@ Para asegurarnos de que puedas interactuar desde la terminal de Ubuntu con el na
   Ejecuta el siguiente comandos:
 
   ```bash
+    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"" >> ~/.zshrc
     echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'\"" >> ~/.zshrc
   ```
 </details>
@@ -707,27 +742,29 @@ CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wik
 
 En esta sección usaremos [GitHub CLI](https://cli.github.com/) para interactuar directamente con GitHub desde la terminal.
 
+Usaremos la GitHub CLI (`gh`) para conectarnos a GitHub utilizando *SSH*, un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+
 Ya debería haberse instalado en tu computadora con los comandos que ejecutaste anteriormente.
 
 Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el comando siguiente en tu terminal:
 
-:warning: **NO edites el `email`**
+:warning: **NO edites el `email`** — Aunque `user:email` parezca un marcador de posición para tu dirección de correo real, no lo es — no lo reemplaces.
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh le hará algunas preguntas:
+`gh` le hará algunas preguntas:
 
-`What is your preferred protocol for Git operations?` Con las flechas, elige `SSH` y presiona `Enter`. SSH es un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+- `Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
 
-`Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
+  Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
 
-Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **PARA LA MAYORÍA DE LOS ESTUDIANTES:** Simplemente presiona `Enter` para omitir. No necesitas una contraseña para el bootcamp y te la pediría cada vez que uses la clave. Sin embargo, hay un riesgo de que si alguien roba tu computadora, pueda subir código a GitHub.
+  - **SI LA SEGURIDAD ES MUY IMPORTANTE PARA TI:** Escribe una contraseña de tu elección y presiona `Enter`. Es _muy_ importante que si introduces una contraseña, la anotes en algún lugar inmediatamente y no la pierdas ni la olvides. Tendrás que introducirla con frecuencia.
 
-`Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
-
-:warning: Cuando escribas tu passphrase, no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu passphrase como su longitud. Simplemente escribe tu passphrase y presiona `Enter` al terminar.
+- `Title for your SSH key`. Puede dejarlo en la propuesta "GitHub CLI", presiona `Enter`.
 
 Obtendrás el siguiente resultado:
 
@@ -798,7 +835,7 @@ gh api user/emails | jq -r '.[].email'
 
 :heavy_check_mark: Si ves una lista de tus emails registrados, puedes continuar :+1:
 
-:x: De lo contrario, por favor haz la [autenticación en GitHub](https://github.com/lewagon/setup/blob/master/windows.es.md#github-cli) nuevamente antes de ejecutar este comando :point_up: again.
+:x: De lo contrario, por favor haz la [autenticación en GitHub](https://github.com/lewagon/setup/blob/master/windows.es.md#github-cli) nuevamente antes de ejecutar este comando :point_up:.
 
 ### Instalación de git
 
@@ -808,7 +845,7 @@ Ejecuta el instalador de `git`:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: Esto te **pedirá** tu nombre (`FirstName LastName`) y tu email.
+:point_up: Esto te **pedirá** tu nombre (`FirstName LastName`) y tu email. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
 
 :warning: **Necesitas** poner uno de los emails que aparecen arriba gracias al comando anterior `gh api ...`. De lo contrario, Kitt no podrá hacerle seguimiento a tu progreso.
 
@@ -818,28 +855,7 @@ Ahora **resetea** tu terminal ejecutando lo siguiente:
 exec zsh
 ```
 
-
-## Desahilitación de la solicitud de SSH passphrase
-
-No vas a querer que te pidan tu passphrase cada vez que te comuniques con un repositorio remoto. Por eso debes agregarle plugin `ssh-agent` a `oh my zsh`:
-
-Primero abre el archivo `.zshrc`:
-
-```bash
-code ~/.zshrc
-```
-
-Luego:
-- Identifica la línea que comienza por `plugins=`
-- Agrega `ssh-agent` al final de la lista de plugins
-
-La lista debería verse de la siguiente manera:
-
-```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-:heavy_check_mark: Guarda el archivo `.zshrc` con `Ctrl` + `S` y cierra tu editor de texto.
+_Esto recarga tu shell para que tome la nueva configuración._
 
 
 ## rbenv
@@ -858,7 +874,7 @@ rm -rf ~/.rbenv
 Luego ejecuta lo siguiente en tu terminal:
 
 ```bash
-sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
+sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev libyaml-dev
 ```
 
 ```bash
@@ -880,13 +896,13 @@ Ahora estás listo para instalar la última versión de [ruby](https://www.ruby-
 Corre este comando, **tomará un tiempo (5-10 minutos)**
 
 ```bash
-rbenv install 3.1.2
+rbenv install 3.3.5
 ```
 
-Cuando la instalación de ruby termine, corre este comando para decirle al sistema que use la versión 3.1.2 por defecto.
+Cuando la instalación de ruby termine, corre este comando para decirle al sistema que use la versión 3.3.5 por defecto.
 
 ```bash
-rbenv global 3.1.2
+rbenv global 3.3.5
 ```
 
 **Reinicia** tu terminal y chequea tu versión Ruby:
@@ -901,7 +917,7 @@ Luego ejecuta esto:
 ruby -v
 ```
 
-:heavy_check_mark: Si ves algo que comience por `ruby 3.1.2p`, entonces puedes continuar +1:
+:heavy_check_mark: Si ves algo que comience por `ruby 3.3.5`, entonces puedes continuar +1:
 
 :x: Si no es el caso, **pídele ayuda a un profesor**.
 
@@ -927,10 +943,16 @@ gem sources -l
 
 En el universo de ruby, a las librerías externas se les llama `gems`: son pedazos de código ruby que puedes descargar y ejecutar en tu computadora. ¡Instalemos algunas!
 
+Primero, vamos a actualizar `bundler`, que es lo que nos permite instalar gemas:
+
+```bash
+gem update bundler
+```
+
 En tu terminal, copia y pega el siguiente comando:
 
 ```bash
-gem install colored faker http pry-byebug rake rails rest-client rspec rubocop-performance sqlite3
+gem install colored faker http pry-byebug rake rails:8.1.1 rest-client rspec rubocop-performance sqlite3:2.8.1 activerecord:8.1.1 ruby-lsp
 ```
 
 :heavy_check_mark: Si obtienes `xx gems installed`, entonces todo está bien :+1:
@@ -975,7 +997,7 @@ Deberías ver una versión. Si no, pídele ayuda a tu profesor.
 Ahora instala node:
 
 ```bash
-nvm install 16.15.1
+nvm install 20.17.0
 ```
 
 Cuando termine la instalación, corre lo siguiente:
@@ -984,7 +1006,7 @@ Cuando termine la instalación, corre lo siguiente:
 node -v
 ```
 
-Si ves `v16.15.1`, the installation succeeded :heavy_check_mark: entonces ahora puedes ejecutar lo siguiente:
+Si ves `v20.17.0`, the installation succeeded :heavy_check_mark: entonces ahora puedes ejecutar lo siguiente:
 
 ```bash
 nvm cache clear
@@ -1000,9 +1022,15 @@ nvm cache clear
 En una terminal, ejecuta los siguientes comandos:
 
 ```bash
-npm install --global yarn
+corepack enable
+yarn set version stable
+```
+
+```bash
 exec zsh
 ```
+
+⚠️ Si ves algún mensaje de error, intenta ejecutar `npm install -g corepack` y luego vuelve a ejecutar los comandos anteriores.
 
 Luego ejecuta este comando:
 
@@ -1022,7 +1050,7 @@ En algunas semanas hablaremos de bases de datos y de SQL. [SQLite](https://sqlit
 En un terminal, ejecuta los siguientes comandos:
 
 ```bash
-sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install sqlite3 libsqlite3-dev pkg-config
 ```
 
 A continuación, ejecuta el siguiente comando:
@@ -1072,7 +1100,7 @@ echo "sudo /etc/init.d/postgresql start" >> ~/.zshrc
 
 Abre una nueva terminal.
 
-:heavy_check_mark: Si ves un mensaje `* Starting PostgreSQL 12 database server`, entonces todo está bien y puedes continuar :+1:
+:heavy_check_mark: Si ves un mensaje `* Starting postgresql (via systemctl): postgresql.service` O `* Starting PostgreSQL 14 database server`, entonces todo está bien y puedes continuar :+1:
 
 :x: Si no es el caso, **contacta a un profesor**.
 
@@ -1137,7 +1165,11 @@ La idea es tener Slack abierto todo el día para compartir enlaces útiles / ped
 
 Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba tu cámara y tu micrófono:
 - Abre la aplicación Slack
-- Escribe `/call --test` en la barra de mensaje de cualquier canal y presiona `Enter`
+- Haz clic en tu foto de perfil en la esquina superior derecha
+- Selecciona "Preferencias" en el menú.
+- Haz clic en "Audio y vídeo" en la columna de la izquierda.
+- Debajo de "Solución de problemas", haz clic en "Ejecutar una prueba de audio, vídeo y pantalla compartida". La prueba se abrirá en una nueva ventana.
+- Comprueba que tus dispositivos preferidos de altavoz, micrófono y cámara aparecen en los menús desplegables y haz clic en "Iniciar prueba"
 - Haz clic en el botón verde "Start test"
 
 ![Chequea el micrófono y la cámara con Slack](images/slack_call_test.png)
@@ -1200,12 +1232,11 @@ Ancla lo siguiente:
 - VS Code
 - Tu navegador de Internet
 - Slack
-- Zoom
 
 
 ## ¡Fin de la configuración!
 
-Tu computadora está lista para el [curso de Desarrollo Web de Le Wagon](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
+Tu computadora está lista para el [curso de AI Software Development de Le Wagon](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
 
 Disfrútalo, sabemos que te va a ir genial :rocket:
 

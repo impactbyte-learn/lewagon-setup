@@ -7,8 +7,12 @@ Vamos a instalarlo ahora.
 Ejecuta los siguientes comandos:
 
 ```bash
-brew install postgresql
-brew services start postgresql
+brew install postgresql@15 libpq
+brew link --force libpq
+```
+
+```bash
+brew services start postgresql@15
 ```
 
 Cuando termines, verifica que funcione:
@@ -20,7 +24,7 @@ psql -d postgres
 Deberías ver un nuevo mensaje como este :point_down:
 
 ```bash
-psql (14.4)
+psql (15.2)
 Type "help" for help.
 
 postgres=#

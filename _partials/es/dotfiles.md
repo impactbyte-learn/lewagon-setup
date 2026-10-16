@@ -43,7 +43,7 @@ gh api user/emails | jq -r '.[].email'
 
 :heavy_check_mark: Si ves una lista de tus emails registrados, puedes continuar :+1:
 
-:x: De lo contrario, por favor haz la [autenticación en GitHub](https://github.com/lewagon/setup/blob/master/<OS.md>#github-cli) nuevamente antes de ejecutar este comando :point_up: again.
+:x: De lo contrario, por favor haz la [autenticación en GitHub](https://github.com/lewagon/setup/blob/master/{{ build_md }}#github-cli) nuevamente antes de ejecutar este comando :point_up:.
 
 ### Instalación de git
 
@@ -53,7 +53,7 @@ Ejecuta el instalador de `git`:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: Esto te **pedirá** tu nombre (`FirstName LastName`) y tu email.
+:point_up: Esto te **pedirá** tu nombre (`FirstName LastName`) y tu email. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
 
 :warning: **Necesitas** poner uno de los emails que aparecen arriba gracias al comando anterior `gh api ...`. De lo contrario, Kitt no podrá hacerle seguimiento a tu progreso.
 
@@ -62,3 +62,5 @@ Ahora **resetea** tu terminal ejecutando lo siguiente:
 ```bash
 exec zsh
 ```
+
+_Esto recarga tu shell para que tome la nueva configuración._

@@ -7,14 +7,14 @@ Now, you are ready to install the latest [ruby](https://www.ruby-lang.org/en/) v
 Run this command, it will **take a while (5-10 minutes)**
 
 ```bash
-rbenv install <RUBY_SETUP_VERSION>
+rbenv install {{ RUBY_SETUP_VERSION }}
 ```
 
 Once the ruby installation is done, run this command to tell the system
-to use the <RUBY_SETUP_VERSION> version by default.
+to use the {{ RUBY_SETUP_VERSION }} version by default.
 
 ```bash
-rbenv global <RUBY_SETUP_VERSION>
+rbenv global {{ RUBY_SETUP_VERSION }}
 ```
 
 **Reset** your terminal and check your Ruby version:
@@ -29,7 +29,7 @@ Then run:
 ruby -v
 ```
 
-:heavy_check_mark: If you see something starting with `ruby <RUBY_SETUP_VERSION>p` then you can proceed :+1:
+:heavy_check_mark: If you see something starting with `ruby {{ RUBY_SETUP_VERSION }}` then you can proceed :+1:
 
 :x: If not, **ask a teacher**
 
@@ -55,10 +55,16 @@ gem sources -l
 
 In the ruby world, we call external libraries `gems`: they are pieces of ruby code that you can download and execute on your computer. Let's install some!
 
+First, we'll update `bundler`, which is what lets us install gems:
+
+```bash
+gem update bundler
+```
+
 In your terminal, copy-paste the following command:
 
 ```bash
-gem install <GEMS>
+gem install {{ GEMS }}
 ```
 
 :heavy_check_mark: If you get `xx gems installed`, then all good :+1:

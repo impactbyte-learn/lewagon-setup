@@ -55,7 +55,7 @@ gh api user/emails | jq -r '.[].email'
 
 :heavy_check_mark: If you see the list of your registered emails, you can proceed :+1:
 
-:x: If not, please [reauthenticate to GitHub](https://github.com/lewagon/setup/blob/master/<OS.md>#github-cli) before running this command :point_up: again.
+:x: If not, please [reauthenticate to GitHub](https://github.com/lewagon/setup/blob/master/{{ build_md }}#github-cli) before running this command :point_up: again.
 
 ### git installer
 
@@ -67,10 +67,13 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 :point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
 
-:warning: You **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress.
+:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
+
 
 Please now **reset** your terminal by running:
 
 ```bash
 exec zsh
 ```
+
+_This reloads your shell so it picks up the new configuration._

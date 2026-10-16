@@ -1,41 +1,10 @@
 # Instructions de configuration
 
-Les instructions ci-dessous vont te permettre de configurer ton ordinateur pour [la formation Développement Web du Wagon](https://www.lewagon.com/web-development-course/full-time).
+Les instructions ci-dessous vont te permettre de configurer ton ordinateur pour [la formation AI Software Development du Wagon](https://www.lewagon.com/web-development-course/full-time).
 
 **Lis-les attentivement et exécute toutes les commandes dans l’ordre suivant**. En cas de blocage, n’hésite pas à demander au prof :raising_hand:
 
 C’est parti :rocket:
-
-
-## Zoom
-
-Pour interagir quand on ne sera pas dans la même pièce, on utilisera [Zoom](https://zoom.us), un outil de visioconférence.
-
-:warning: Si Zoom est déjà installé sur ton ordinateur, vérifie qu’il s’agit au moins de la version **5.6**.
-
-Va sur [zoom.us/download](https://zoom.us/download).
-
-Sous **Client Zoom**, clique sur le bouton **Télécharger**.
-
-Ouvre le fichier que tu viens de télécharger pour installer l’application.
-
-Ouvre l’application Zoom.
-
-Si tu as déjà un compte Zoom, connecte-toi avec tes identifiants.
-
-Sinon, clique sur le lien **Inscrivez-vous, c’est gratuit** :
-
-![Inscrivez-vous à Zoom, c’est gratuit](images/zoom_sign_up_free.png)
-
-Sur le site Web de Zoom, remplis le formulaire.
-
-Une fois que tu as terminé, retourne sur l’application Zoom et connecte-toi avec tes identifiants.
-
-Tu devrais voir apparaître un écran ressemblant à ça :
-
-![Écran d’accueil Zoom](images/zoom_home_screen.png)
-
-Tu peux fermer l’application Zoom.
 
 
 ## Compte GitHub
@@ -45,6 +14,8 @@ Est-ce que tu as déjà un compte GitHub ? Si ce n’est pas le cas, [inscris-t
 :point_right: **[Télécharge une photo](https://github.com/settings/profile)** et indique correctement ton nom sur ton compte GitHub. C’est important, car notre tableau de bord interne utilise ton avatar. Fais-le **maintenant** avant de poursuivre la configuration de ton ordinateur.
 
 ![image de GitHub](images/github_picture.png)
+
+:point_right: **[Active l'authentification à deux facteurs (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub t'enverra des messages texte avec un code lorsque tu essaies de te connecter. C'est important pour la sécurité et cela sera bientôt obligatoire pour contribuer du code sur GitHub.
 
 
 ## Visual Studio Code
@@ -93,20 +64,42 @@ Copie-colle les commandes suivantes dans le terminal :
 code --install-extension ms-vscode.sublime-keybindings
 code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension rebornix.ruby
+code --install-extension shopify.ruby-lsp
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension Rubymaniac.vscode-paste-and-indent
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension anteprimorac.html-end-tag-labels
+code --install-extension marcoroth.herb-lsp
+code --install-extension rayhanw.erb-helpers
 ```
 
 Voici la liste des extensions que tu es en train d'installer :
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### Fonctionnalités IA de VS Code
+
+VS Code inclut de nombreuses **fonctionnalités d'IA** puissantes, qui sont un excellent outil une fois que tu sais déjà coder.
+
+Cela dit, s'appuyer sur l'IA trop tôt peut masquer des concepts importants et rendre le débogage plus difficile à comprendre. Une fois à l'aise avec les fondamentaux, tu sauras quand et comment utiliser l'IA efficacement — sans lui laisser faire la réflexion à ta place.
+
+Pour le début du bootcamp, on va désactiver ces fonctionnalités. Au bon moment du cours, on les réactivera afin que tu puisses les utiliser à bon escient.
+
+Dans **VS Code** :
+
+1. Ouvre la "Palette de **c**ommandes" de VS Code : tape `Ctrl-Shift-P`.
+1. La Palette de commandes s'ouvrira : une petite zone de texte en haut de l'écran. Commence à taper `aifeatures` jusqu'à voir "Chat: Learn How to Hide AI features". Clique dessus.
+  ![La palette de commandes en haut de l'écran](images/vscode_find_aifeatures.png)
+1. Cela ouvrira les paramètres et affichera l'option "Disable and hide built-in AI features ...". Coche la case devant cette option.
+  ![Cochez l'option de désactivation](images/vscode_disable_aifeatures.png)
+
+Plus tard, si tu souhaites **réactiver** les fonctionnalités d'IA, tu peux suivre les mêmes instructions pour décocher la case.
 
 
 ### Configuration de Live Share
@@ -129,6 +122,36 @@ C’est bon !
 
 ## Outils en ligne de commande
 
+### Vérifier la locale
+
+Le concept de "locale" permet de personnaliser les programms en fonction de ta langue et ton pays.
+
+Vérifions que la locale est bien en **anglais** dans le terminal :
+
+```bash
+locale
+```
+
+Si la commande ne renvoie pas quelque chose qui contient `LANG=en_US.UTF-8`, lance ceci dans un terminal Ubuntu :
+
+```bash
+sudo locale-gen en_US.UTF-8
+```
+
+Si après, tu reçois un avertissement (`bash: warning: setlocale: LC_ALL: cannot change locale (en_US.utf-8)`) dans ton terminal, veuillez faire ce qui suit :
+
+<details>
+  <summary>Générer la localisation</summary>
+
+Veuillez exécuter ces lignes dans ton terminal.
+
+```bash
+sudo update-locale LANG=en_US.UTF8
+sudo apt-get update
+sudo apt-get install language-pack-en language-pack-en-base manpages
+```
+</details>
+
 ### Zsh & Git
 
 Au lieu d’utiliser le [shell](https://fr.wikipedia.org/wiki/Interface_syst%C3%A8me) `bash` par défaut, nous utiliserons `zsh`.
@@ -144,7 +167,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl git imagemagick jq unzip vim zsh
+sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
 ```
 
 Ces commandes te demanderont ton mot de passe ; saisis-le.
@@ -203,27 +226,29 @@ CLI est l’acronyme de [Command-line Interface](https://en.wikipedia.org/wiki/C
 
 Dans cette section, tu vas installer [GitHub CLI](https://cli.github.com/) pour interagir avec GitHub directement depuis le terminal.
 
+Nous allons utiliser GitHub CLI (`gh`) pour nous connecter à GitHub en utilisant *SSH*, un protocole pour s'authentifier en utilisant des clés SSH au lieu de la fameuse paire nom d'utilisateur et mot de passe.
+
 Elle doit déjà être installée sur ton ordinateur grâce aux commandes précédentes.
 
 Pour **te connecter**, commence par copier-coller la commande suivante dans ton terminal :
 
-:warning: **NE modifie PAS `email`**
+:warning: **NE modifie PAS `email`** — Même si `user:email` ressemble à un emplacement réservé pour ta véritable adresse e-mail, ce n'est pas le cas — ne le remplace pas.
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh va te poser quelques questions :
+`gh` va te poser quelques questions :
 
-`What is your preferred protocol for Git operations?` Avec les flèches, choisis `SSH` et appuie sur `Enter`. SSH est un protocole pour s'authentifier en utilisant des clés SSH au lieu de la fameuse paire nom d'utilisateur et mot de passe.
+- `Generate a new SSH key to add to your GitHub account?` Appuie sur `Enter` pour demander à gh de générer les clés SSH pour toi.
 
-`Generate a new SSH key to add to your GitHub account?` Appuie sur `Enter` pour demander à gh de générer les clés SSH pour toi.
+  Si tu as déjà des clés SSH, tu verras à la place `Upload your SSH public key to your GitHub account?` Avec les flèches, sélectionne le chemin de ta clé publique et appuie sur `Enter`.
 
-Si tu as déjà des clés SSH, tu verras à la place `Upload your SSH public key to your GitHub account?` Avec les flèches, sélectionne le chemain de ta clé publique et appuie sur `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)` :
+  - **POUR LA PLUPART DES GENS :** Appuie simplement sur `Enter` pour passer. Tu n'as pas besoin d'une passphrase pour le bootcamp et cela te serait demandé à chaque utilisation de la clé. Il y a cependant un risque que si quelqu'un vole ton ordinateur, il puisse pousser du code sur GitHub.
+  - **SI LA SÉCURITÉ EST VRAIMENT IMPORTANTE POUR TOI :** Saisis une passphrase de ton choix et appuie sur `Enter`. Il est _vraiment_ important que si tu saisis une passphrase, tu la notes immédiatement quelque part et ne la perdes/oublies pas. Tu devras la saisir fréquemment.
 
-`Enter a passphrase for your new SSH key (Optional)`. Saisis un mot de passe dont tu te souviendras. Ce mot de passe sert à protéger ta clé privée enregistrée sur ton disque sur. Ensuite, appuie sur `Enter`.
-
-:warning: Lorsque tu saisiras ton mot de passe, rien ne s’affichera à l’écran ; **c’est normal**. Il s’agit d’une mesure de sécurité permettant de masquer non seulement les caractères de ton mot de passe, mais aussi sa longueur. Saisis simplement ton mot de passe, puis appuie sur `Enter`.
+- `Title for your SSH key`. Tu peux laisser ce qui est proposé par défaut, à savoir "GitHub CLI", appuie sur `Enter`.
 
 Tu obtiendras le résultat suivant :
 
@@ -306,7 +331,7 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 :point_up: On te **demandera** de fournir ton nom (`FirstName LastName`) et ton adresse e-mail.
 
-:warning: Tu **dois** saisir l’une des adresses e-mail indiquées ci-dessus avec la commande `gh api ...` précédente. Sinon, Kitt ne pourra pas suivre tes progrès.
+:warning: Tu **dois** saisir l’une des adresses e-mail indiquées ci-dessus avec la commande `gh api ...` précédente. Sinon, Kitt ne pourra pas suivre tes progrès. 💡 Sélectionne l'adresse `@users.noreply.github.com` si tu ne souhaites pas que ton adresse e-mail apparaisse dans les dépôts publics auxquels tu pourrais contribuer.
 
 **Réinitialise** ton terminal en exécutant :
 
@@ -314,28 +339,7 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 exec zsh
 ```
 
-
-## Désactiver l’invite de phrase secrète SSH
-
-Tu veux éviter d’avoir à fournir ta phrase secrète chaque fois que tu communiques avec un dépôt de code distant. Pour cela, tu as besoin d’ajouter le plug-in `ssh-agent` à `oh my zsh` :
-
-Commence par ouvrir le fichier `.zshrc` :
-
-```bash
-code ~/.zshrc
-```
-
-Puis :
-- Localise la ligne commençant par `plugins=`
-- Ajoute `ssh-agent` à la fin de la liste des plug-ins
-
-La liste doit ressembler à ça :
-
-```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-:heavy_check_mark: Enregistre le fichier `.zshrc` à l’aide des touches `Ctrl` + `S` et ferme ton éditeur de texte.
+_Cela recharge ton shell afin qu'il prenne en compte la nouvelle configuration._
 
 
 ## rbenv
@@ -354,7 +358,7 @@ rm -rf ~/.rbenv
 Puis dans le terminal, exécute :
 
 ```bash
-sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
+sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev libyaml-dev
 ```
 
 ```bash
@@ -376,17 +380,17 @@ Tu peux maintenant installer la dernière version de [ruby](https://www.ruby-lan
 Exécute cette commande ; cela **peut prendre un moment (5-10 minutes)**
 
 ```bash
-rbenv install 3.1.2
+rbenv install 3.3.5
 ```
 
 Une fois que l’installation de Ruby est terminée, exécute cette commande pour indiquer au système
-d’utiliser la version 3.1.2 par défaut.
+d’utiliser la version 3.3.5 par défaut.
 
 ```bash
-rbenv global 3.1.2
+rbenv global 3.3.5
 ```
 
-**Réinitialise** ton ton terminal et vérifie ta version de Ruby :
+**Réinitialise** ton terminal et vérifie ta version de Ruby :
 
 ```bash
 exec zsh
@@ -398,7 +402,7 @@ Puis exécute :
 ruby -v
 ```
 
-:heavy_check_mark: Si tu vois apparaître un message commençant par `ruby 3.1.2p`, tu peux continuer :+1:
+:heavy_check_mark: Si tu vois apparaître un message commençant par `ruby 3.3.5`, tu peux continuer :+1:
 
 :x: Sinon, **demande au prof**
 
@@ -424,10 +428,16 @@ gem sources -l
 
 Dans l’environnement ruby, les bibliothèques externes sont appelées des `gems` : ce sont des bouts de code ruby, que tu peux télécharger et exécuter sur ton ordinateur. On va en installer quelques-unes.
 
+Tout d'abord, nous allons mettre à jour `bundler`, ce qui nous permet d'installer des gemmes :
+
+```bash
+gem update bundler
+```
+
 Copie-colle la commande suivante dans ton terminal :
 
 ```bash
-gem install colored faker http pry-byebug rake rails rest-client rspec rubocop-performance sqlite3
+gem install colored faker http pry-byebug rake rails:8.1.1 rest-client rspec rubocop-performance sqlite3:2.8.1 activerecord:8.1.1 ruby-lsp
 ```
 
 :heavy_check_mark: Si tu vois apparaître `xx gems installed`, c’est bon :+1:
@@ -472,7 +482,7 @@ Tu devrais voir apparaître une version. Sinon, demande au prof.
 On va maintenant installer node :
 
 ```bash
-nvm install 16.15.1
+nvm install 20.17.0
 ```
 
 Une fois l’installation terminée, exécute :
@@ -481,7 +491,7 @@ Une fois l’installation terminée, exécute :
 node -v
 ```
 
-Si tu vois apparaître `v16.15.1`, l'installation a réussi :heavy_check_mark: Tu peux alors exécuter :
+Si tu vois apparaître `v20.17.0`, l'installation a réussi :heavy_check_mark: Tu peux alors exécuter :
 
 ```bash
 nvm cache clear
@@ -492,22 +502,28 @@ nvm cache clear
 
 ## yarn
 
-[`yarn`](https://yarnpkg.com/) est un gestionnaire de paquets, qui permet d’installer des bibliothèques JavaScript. Installons-le :
+[`yarn`](https://yarnpkg.com/) est un gestionnaire de paquets, qui permet d'installer des bibliothèques JavaScript. Installons-le :
 
-Exécute les commandes suivantes dans le terminal :
+Exécute les commandes suivantes dans le terminal :
 
 ```bash
-npm install --global yarn
+corepack enable
+yarn set version stable
+```
+
+⚠️ Si tu rencontres des messages d'erreur, essaye d'exécuter `npm install -g corepack` puis exécute à nouveau les commandes ci-dessus.
+
+```bash
 exec zsh
 ```
 
-Puis exécute la commande suivante :
+Puis exécute la commande suivante :
 
 ```bash
 yarn -v
 ```
 
-:heavy_check_mark: Si tu vois apparaître une version, c’est bon :+1:
+:heavy_check_mark: Si tu vois apparaître une version, c'est bon :+1:
 
 :x: Sinon, **demande au prof**
 
@@ -519,7 +535,7 @@ Dans quelques semaines, on abordera les bases de données et le SQL. [SQLite](ht
 Dans un terminal, exécute la commande suivante :
 
 ```bash
-sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install sqlite3 libsqlite3-dev pkg-config
 ```
 
 Puis exécute celle-ci :
@@ -573,18 +589,12 @@ curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb 
 
 ## Kitt
 
-:warning: Si tu as reçu un e-mail du Wagon t’invitant à t’inscrire sur Kitt (notre plateforme pédagogique), tu peux passer cette étape. Suis plutôt les instructions contenues dans l’e-mail que tu as reçu, si tu ne l’as pas déjà fait.
+Tu devrais avoir reçu un e-mail du Wagon t'invitant à t'inscrire sur [Kitt](https://kitt.lewagon.com) (notre plateforme pédagogique). En soumettant ton formulaire d'inscription sur Kitt, tu devrais avoir reçu deux invitations supplémentaires :
 
-Si tu n’es pas certain de ce que tu dois faire, suis [ce lien](https://kitt.lewagon.com/). Si tu es déjà connecté, tu peux passer cette section. Si tu n’es pas connecté, clique sur `Enter Kitt as a Student`. Si tu réussis à te connecter, tu peux passer cette étape. Sinon, demande au prof si tu aurais dû recevoir un e-mail ou si tu dois suivre les instructions ci-dessous.
+- Une de Slack, t'invitant à rejoindre la communauté Slack des anciens étudiants du Wagon (où tu pourras discuter avec tes amis et tous les anciens élèves). Clique sur **Rejoindre** et renseigne tes informations.
+- Une de GitHub, t'invitant à rejoindre l'équipe `lewagon`. **Accepte-la**, sinon tu ne pourras pas accéder aux slides des cours.
 
-Inscris-toi en tant qu’alumni du Wagon sur [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Sélectionne ton batch, connecte-toi avec GitHub et renseigne toutes tes informations.
-
-Le prof vérifiera ensuite avec toi que tu fais bien partie de ce batch. Tu peux lui demander de vérifier dès que tu as fini de remplir le formulaire d’inscription.
-
-Une fois que le prof a vérifié ton profil, consulte ta messagerie. Tu devrais avoir reçu 2 e-mails :
-
-- un de Slack, t’invitant à rejoindre la communauté Slack des anciens étudiants du Wagon (où tu pourras discuter avec tes amis et tous les anciens élèves). Clique sur **Devenir membre** et renseigne toutes les informations ;
-- un de GitHub, t’invitant à rejoindre l’équipe `lewagon`. **Accepte** pour accéder aux cours.
+Si ce n'est pas le cas, contacte ton équipe pédagogique.
 
 
 ## Slack
@@ -610,8 +620,11 @@ L’idée est de laisser Slack ouvert toute la journée pour partager des liens 
 
 On va vérifier que tout fonctionne correctement ; pour cela, on va tester ta caméra et ton microphone :
 - Ouvre l’application Slack
-- Dans la barre de message de n’importe quel channel, saisis `/call --test` et appuie sur `Enter`
-- Clique sur le bouton vert « Démarrer le test »
+- Clique sur ta photo de profil en haut à droite
+- Clique sur `Preferences` depuis le menu
+- Sélectionne `Audio & video` dans la colonne de gauche
+- En dessous de `Troubleshooting`, clique sur `Run an audio, video and screensharing test`. Le test va s’ouvrir dans une nouvelle fenêtre
+- Vérifie que ton microphone, caméra, et enceintes soient bien sélectionnés, puis clique sur `Start test`
 
 ![Vérifier le fonctionnement du microphone et de la webcam avec Slack](images/slack_call_test.png)
 
@@ -672,12 +685,11 @@ Tu dois épingler :
 - VS Code
 - ton navigateur Internet
 - Slack
-- Zoom
 
 
 ## La configuration est terminée !
 
-Ton ordinateur est prêt pour [la formation Développement Web du Wagon](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
+Ton ordinateur est prêt pour [la formation AI Software Development du Wagon](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
 
 Profite du bootcamp, tu vas assurer :rocket:
 

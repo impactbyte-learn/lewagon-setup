@@ -1,40 +1,10 @@
 # 电脑设置教程
 
-以下的教程将会帮助你为接下来在[Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time)全栈开发训练营中做好准备：
+以下的教程将会帮助你为接下来在[Le Wagon AI Software Development course](https://www.lewagon.com/web-development-course/full-time)全栈开发训练营中做好准备：
 
 请**仔细阅读并按顺序执行指令**。如果你在哪一步卡住了，不用犹豫，可以举手咨询老师:raising_hand:
 
 让我们开始吧 :rocket:
-
-## Zoom
-
-为了让我们能够线上的交流，我们将会使用[Zoom](https://zoom.us/)，一个视频会议工具。
-
-:warning: 如果你已经安装了Zoom，请确保它的版本至少是**5.6**。
-
-打开[https://zoom.us/download](https://zoom.us/download)。
-
-在**Zoom会议客户端（Zoom Client）**下方点击**下载（Download）**按钮。
-
-打开你刚刚下载的文件并安装应用程序。
-
-打开Zoom。
-
-如果你已经有Zoom账号了，那就用你的账号密码登陆吧。
-
-如果没有账号的话，点击**Sign Up Free**链接：
-
-![Sign Up Free to Zoom](images/zoom_sign_up_free.png)
-
-接下来，它会跳转到Zoom的网站让你填一个表。
-
-完成这个表之后，回到Zoom软件，然后用你的账号密码登陆吧。
-
-你应该会看到下面这个界面：
-
-![Zoom Home Screen](images/zoom_home_screen.png)
-
-现在你可以关掉Zoom了。
 
 
 ## GitHub账户
@@ -44,6 +14,8 @@
 :point_right: **[上传一张照片](https://github.com/settings/profile)** 并在你的GitHub账户中设置你的名称。这一步很重要，因为我们将使用一个带有你头像的内部dashboard。请**现在**立即做这一步，然后再去继续下面的步骤。
 
 ![](images/github_upload_picture.png)
+
+**[启用双因素认证（2FA）](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**。当您尝试登录时，GitHub将向您发送带有代码的短信。这对于安全性很重要，也很快将成为贡献GitHub上的代码的必要条件。
 
 
 ## Visual Studio Code
@@ -80,11 +52,11 @@ code
 :x: 如果没有的话，**请向老师求助**。
 
 
-## VS Code插件
+## VS Code 插件
 
 ### 安装
 
-现在我们来给VS Code安装一些有用的插件吧。
+现在我们来给 VS Code 安装一些有用的插件吧。
 
 复制粘贴下面的命令到终端：
 
@@ -92,20 +64,43 @@ code
 code --install-extension ms-vscode.sublime-keybindings
 code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension rebornix.ruby
+code --install-extension shopify.ruby-lsp
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension Rubymaniac.vscode-paste-and-indent
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension anteprimorac.html-end-tag-labels
+code --install-extension marcoroth.herb-lsp
+code --install-extension rayhanw.erb-helpers
 ```
 
 你安装的就是下面这些插件：
+
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### VS Code AI Features
+
+VS Code includes many powerful **AI features**, which are a great tool once you already know how to code.
+
+That said, relying on AI too early can hide important concepts and make debugging harder to understand. Once you’re comfortable with the fundamentals, you’ll know when and how to use AI effectively — without letting it do the thinking for you.
+
+For the start of the bootcamp, we’ll disable these features. At the right point in the course, we’ll reenable them so you can put them to good use.
+
+In **VS Code**:
+
+1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P`.
+1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
+   ![The Command Palette at the top of the screen](images/vscode_find_aifeatures.png)
+1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
+   ![Check the disable option](images/vscode_disable_aifeatures.png)
+
+Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
 
 
@@ -127,7 +122,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl git imagemagick jq unzip vim zsh
+sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
 ```
 
 这些指令会问你的密码：输入你的密码。
@@ -190,23 +185,23 @@ CLI是[Command-line Interface（命令行界面）](https://baike.baidu.com/item
 
 首先你需要**登陆**。复制粘贴下面的命令到终端，敲击回车：
 
-:warning: **不要更改下面指令中的`email`**
+:warning: **不要更改下面指令中的`email`** — 尽管`user:email`看起来像是你真实邮件地址的占位符，但实际上并不是——请不要替换它。
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh会问你几个问题：
+`gh`会问你几个问题：
 
-`What is your preferred protocol for Git operations?（你要用什么协议来执行Git操作？）` 让箭头`>`停在`SSH`前面，然后敲击回车。SSH使用SSH密钥来登陆用户，而不是用用户名和密码。
+- `Generate a new SSH key to add to your GitHub account?（生成新的SSH密钥，然后添加到Github账号上？）` 敲击回车，让gh帮你生成。
 
-`Generate a new SSH key to add to your GitHub account?（生成新的SSH密钥，然后添加到Github账号上？）` 敲击回车，让gh帮你生成。
+  如果你以前生成过SSH密钥，那你就会看到这个问题`Upload your SSH public key to your GitHub account?（上传公共密钥到Github账户上上吗？）` 上下移动箭头`>`，让它停在你想选的SSH公钥前面，然后敲击回车。
 
-如果你以前生成过SSH密钥，那你就会看到这个问题`Upload your SSH public key to your GitHub account?（上传公共密钥到Github账户上上吗？）` 上下移动箭头`>`，让它停在你想选的SSH公钥前面，然后敲击回车。
+- `Enter a passphrase for your new SSH key (Optional)（输入新的SSH密钥的密码（非必填））`:
+  - **对大多数学生来说：** 直接按下`Enter`跳过即可。训练营中不需要密码，而且每次使用密钥时都会提示你输入。不过有一个风险，如果有人偷了你的电脑，他们就可以向GitHub推送代码。
+  - **如果安全对你来说非常重要：** 输入一个你选择的密码，然后按`Enter`。_非常_ 重要的是，如果你输入了密码，请立即把它记在某个地方，不要丢失或遗忘。你会经常需要输入它。
 
-`Enter a passphrase for your new SSH key (Optional)（输入新的SSH密钥的密码（非必填））`. 输入一个密码，然后写下来或者记住它。这是保护你本地私钥的密码。然后敲击回车。
-
-:warning: 当你输入你的密码的时候，屏幕上不会有任何的显示，**这是正常的**。这是一个安全保护的设置，来隐藏你整个密码，包括它的长度。你可以放心的输入你的密码，结束后按下`Enter`就可以了。
+- `Title for your SSH key`。你可以把它留在建议的 "GitHub CLI"，按`Enter`。
 
 然后你会看到下面的文字输出：
 
@@ -288,7 +283,7 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 :point_up: 这会**提示**填写你的全名（`FirstName LastName`）和你的邮箱。
 
-:warning: 注意啦，你**需要**填`gh api ...`命令列出的其中一个电子邮箱。不然，Kitt就没办法跟进你的学习进程。
+:warning: 注意啦，你**需要**填`gh api ...`命令列出的其中一个电子邮箱。不然，Kitt就没办法跟进你的学习进程。 你选择的电子邮件将**公开**显示在互联网上。💡 如果您不希望您的电子邮件出现在您可能会贡献的公共存储库中，请选择 `@users.noreply.github.com` 地址。
 
 现在运行下面的命令来**重置**你的终端：
 
@@ -296,29 +291,8 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 exec zsh
 ```
 
+_这将重新加载你的shell，使其能够读取新的配置。_
 
-
-## 禁用SSH密码输入
-
-每次跟远程的代码库交流的时候都问你要密码是件很烦的事。所以呀，你需要给`oh my zsh`加上一个`ssh-agent`插件：
-
-首先，打开`.zshrc`文件：
-
-```bash
-code ~/.zshrc
-```
-
-然后：
-- 找到`plugins=`开始的这一行
-- 在插件（plugin）列表里加上`ssh-agent`
-
-这个列表现在看起来应该是这样的：
-
-```
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-:heavy_check_mark: 按下`Ctrl` + `S` 保存`.zshrc`文件，然后关掉你的代码编辑器。
 
 ## rbenv
 
@@ -336,7 +310,7 @@ rm -rf ~/.rbenv
 然后在终端里运行:
 
 ```bash
-sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
+sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev libyaml-dev
 ```
 
 ```bash
@@ -358,13 +332,13 @@ exec zsh
 运行下方这个指令，它会**花费一些时间（5-10分钟）**
 
 ```bash
-rbenv install 3.1.2
+rbenv install 3.3.5
 ```
 
-当Ruby安装好后，运行下面这个指令来告诉系统使用3.1.2这个版本作为默认版本。
+当Ruby安装好后，运行下面这个指令来告诉系统使用3.3.5这个版本作为默认版本。
 
 ```bash
-rbenv global 3.1.2
+rbenv global 3.3.5
 ```
 
 然后**重置**你的终端，然后检查Ruby版本：
@@ -374,7 +348,7 @@ exec zsh
 ruby -v
 ```
 
-:heavy_check_mark: 如果你有看到`ruby 3.1.2p`，那么你可以继续下一步+1:
+:heavy_check_mark: 如果你有看到`ruby 3.3.5`，那么你可以继续下一步+1:
 
 :x: 如果没有的话，**询问一下老师**。
 
@@ -398,10 +372,16 @@ gem sources -l
 
 在ruby的世界里，我们将外部的库称之为`gems`：他们是一些你可以下载并在你的电脑上运行的ruby代码。让我们一起安装一些!
 
+首先，我们将更新`bundler`，它是用于安装 gem 的工具：
+
+```bash
+gem update bundler
+```
+
 在你的终端里，复制粘贴下面的指令：
 
 ```bash
-gem install colored faker http pry-byebug rake rails rest-client rspec rubocop-performance sqlite3
+gem install colored faker http pry-byebug rake rails:8.1.1 rest-client rspec rubocop-performance sqlite3:2.8.1 activerecord:8.1.1 ruby-lsp
 ```
 
 :heavy_check_mark: 如果你看到 `xx gems installed`，那么一切正常 :+1:
@@ -446,7 +426,7 @@ nvm -v
 现在，让我们来安装node：
 
 ```bash
-nvm install 16.15.1
+nvm install 20.17.0
 ```
 
 当这个指令执行结束之后，运行：
@@ -455,7 +435,7 @@ nvm install 16.15.1
 node -v
 ```
 
-如果看到`v16.15.1`，那么你安装成功了:heavy_check_mark: 然后，你就可以运行下面这个命令了：
+如果看到`v20.17.0`，那么你安装成功了:heavy_check_mark: 然后，你就可以运行下面这个命令了：
 
 ```bash
 nvm cache clear
@@ -469,8 +449,15 @@ nvm cache clear
 让我们一起来安装[`yarn`](https://classic.yarnpkg.com/en/docs/install):
 
 ```bash
-npm install --global yarn
+corepack enable
+yarn set version stable
 ```
+
+```bash
+exec zsh
+```
+
+⚠️ 如果你看到任何错误信息，请尝试运行 `npm install -g corepack` 然后再次运行上面的命令。
 
 重启终端并运行：
 
@@ -488,7 +475,7 @@ yarn -v
 在终端，执行下面的命令：
 
 ```bash
-sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install sqlite3 libsqlite3-dev pkg-config
 ```
 
 然后执行下面的命令：
@@ -581,9 +568,12 @@ After the test are finished, you should have green "All clear" messages at least
 之后你可以全天开着Slack，这样你可以在上面分享有用的链接/寻求帮助/决定去那儿吃饭/...
 
 为了确保视频电话可以正常工作，让我们一起测试摄像头和麦克风：
-- 打开Slack应用程序
-- 在任意群组的消息编辑框里输入`/call --test`并按下`Enter`
-- 按下"Start test"绿色按钮
+- 打开Slack应用程序。
+- 点击右上方的个人照片。
+- 从菜单中选择 `首选项(Preferences)`。
+- 点击左侧栏中的 `音频和视频(Audio & video)`。
+- 在 `故障排除(Troubleshooting)`下面，点击 `运行音频、视频和屏幕共享测试(Run an audio, video and screensharing test)`。该测试将在一个新窗口中打开。
+- 检查你使用的扬声器、麦克风和摄像机设备是否出现在选项中，然后点击 `开始测试(Start test)`。
 
 ![在Slack检查麦克风和摄像头](images/slack_call_test.png)
 
@@ -644,7 +634,6 @@ You must pin:
 - VS Code
 - Your Internet browser
 - Slack
-- Zoom
 
 
 ## 设置完成啦!

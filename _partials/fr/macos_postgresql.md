@@ -4,14 +4,18 @@ Parfois, SQLite n'est pas suffisant et nous aurons besoin d'un outil plus avanc�
 
 Installons-le maintenant.
 
-Exécute les commandes suivantes :
+Exécute les commandes suivantes :
 
 ```bash
-brew install postgresql
-brew services start postgresql
+brew install postgresql@15 libpq
+brew link --force libpq
 ```
 
-Une fois que c’est fait, on va vérifier que tout a bien fonctionné :
+```bash
+brew services start postgresql@15
+```
+
+Une fois que c’est fait, on va vérifier que tout a bien fonctionné :
 
 ```bash
 psql -d postgres
@@ -20,7 +24,7 @@ psql -d postgres
 Tu devrais voir apparaître un nouveau message comme celui-ci :point_down:
 
 ```bash
-psql (14.4)
+psql (15.2)
 Type "help" for help.
 
 postgres=#

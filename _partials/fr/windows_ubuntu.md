@@ -2,13 +2,17 @@
 
 ### Installation
 
-:information_source: Les instructions suivantes dépendent de ta version de Windows. N'exécute que les instructions qui correspondent à ta version :point_down:
-
-#### Windows 11
-
 Si tu as Windows 11, après avoir redémarré ton ordinateur, tu devrais voir une fenêtre de terminal indiquant que WSL poursuit le processus d'installation d'Ubuntu. Lorsque c'est terminé, Ubuntu va se lancer.
 
-#### Windows 10
+Si l'installation d'Ubuntu ne reprend pas, essaye d'abord à nouveau
+- Appuie sur `Windows` + `R`
+- Saisis `cmd`
+- Appuie sur **`Ctrl` + `Shift` + `Enter`**
+- Exécute `wsl --install`
+
+
+<details>
+<summary>Résolution des problèmes pour Windows 10 (uniquement si nécessaire, vérifie avec un TA)</summary>
 
 Si tu as Windows 10, installons Ubuntu via le Microsoft Store :
 
@@ -33,6 +37,8 @@ Si tu as Windows 10, installons Ubuntu via le Microsoft Store :
 </details>
 
 Une fois l’installation terminée, le bouton « Installer » se transforme en bouton « Lancer » ; clique dessus.
+
+</details>
 
 ### Premier lancement
 
@@ -77,7 +83,6 @@ wsl -l -v
   :heavy_check_mark: Au bout de quelques secondes, tu devrais voir apparaître le message suivant : `The conversion is complete`.
 
   :x: Si ce n’est pas le cas, il faut vérifier que les fichiers Ubuntu ne sont pas compressés.
-</details>
 
 <details>
   <summary>Vérifier que les fichiers sont décompressés</summary>
@@ -97,3 +102,17 @@ wsl -l -v
 </details>
 
 Tu peux maintenant fermer cette fenêtre de terminal.
+
+</details>
+
+### Vérifier ton nom d'utilisateur
+
+Tape cette commande dans le terminal Ubuntu :
+
+```bash
+whoami
+```
+
+Cela devrait renvoyer le nom d'utilisateur que tu as choisi précédemment.
+
+:x: Si cela affiche `root`, **contacte un TA** avant de continuer !

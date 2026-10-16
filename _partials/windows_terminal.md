@@ -6,7 +6,10 @@
 
 If you are running Windows 11, the Windows Terminal is already installed and you can proceed to the next section :point_down:
 
-If you are running Windows 10, let's install Windows Terminal, a real modern terminal:
+If you are running Windows 10, let's install Windows Terminal, a real modern terminal.
+
+<details>
+<summary><strong>Windows 10</strong>: Install Windows Terminal</summary>
 
 - Click on `Start`
 - Type  `Microsoft Store`
@@ -31,6 +34,8 @@ If you are running Windows 10, let's install Windows Terminal, a real modern ter
 
 Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
 
+</details>
+
 ### Ubuntu as the default terminal
 
 Let's make Ubuntu the default terminal of your Windows Terminal application.
@@ -47,13 +52,13 @@ It should open the terminal settings:
 
 You may see an orange circle rather than a penguin as the logo for Ubuntu.
 
-We have circle in red the part you will change:
+We have circled in red the part you need to add:
 
 ![Windows Terminal JSON settings file](images/windows_terminal_settings_json.png)
 
-First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
-- Locate the entry with both `"name": "Ubuntu",` and `"hidden": false,`
-- Add the following line after it:
+First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one.
+
+- Place this line inside the { } block that contains "name": "Ubuntu" (like in the screenshot):
 
 ```bash
 "commandline": "wsl.exe ~",
@@ -61,12 +66,13 @@ First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory inst
 
 :warning: Do not forget the comma at the end of the line!
 
-Then, let's disable warning for copy-pasting commands between Windows and Ubuntu:
-- Locate the line `"defaultProfile": "{2c4de342-...}"`
+Then, let's disable warnings for copy-pasting commands between Windows and Ubuntu:
+
+- Locate the line "defaultProfile": "{2c4de342-...}"
 - Add the following line after it:
 
 ```bash
-"multiLinePasteWarning": false,
+"warning.multiLinePaste": false,
 ```
 
 :warning: Do not forget the comma at the end of the line!

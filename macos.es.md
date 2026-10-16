@@ -1,45 +1,10 @@
 # Instrucciones de la configuración
 
-Aquí abajo encontrarás las instrucciones para la configuración que tu computadora necesita para el [curso de Desarrollo Web de Le Wagon](https://www.lewagon.com/web-development-course/full-time).
+Aquí abajo encontrarás las instrucciones para la configuración que tu computadora necesita para el [curso de AI Software Development de Le Wagon](https://www.lewagon.com/web-development-course/full-time).
 
 Por favor, **léelas cuidadosamente y ejecuta todos los comandos en el orden indicado**. Si tienes algún problema, no dudes en pedirle ayuda a tu profesor :raising_hand:
 
 ¡Comencemos! :rocket:
-
-
-## Zoom
-
-Para poder interactuar cuando no estemos en el mismo lugar físico, usaremos [Zoom](https://zoom.us/), una herramienta de videoconferencia.
-
-:warning: Si ya tienes Zoom instalado, por favor asegúrate de que por lo menos tienes la versión **5.6**.
-
-Ve a [zoom.us/download](https://zoom.us/download).
-
-Haz clic en el botón **Download** debajo de **Zoom Client**.
-
-Abre el archivo que acabas de descargar para instalar la aplicación.
-
-Abre la aplicación Zoom.
-
-Si tienes una Mac con Apple silicon, [te pedirán instalar Rosetta](https://support.apple.com/en-us/HT211861). Haz clic en instalar. Luego escribe tu nombre y contraseña para que corra la instalación.
-
-![Instala Rosetta](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Big-Sur/macos-big-sur-software-update-rosetta-alert.jpg)
-
-Si ya tienes una cuenta Zoom, inicia sesión con tus credenciales.
-
-Si no, haz clic en el enlace **Sign Up Free**, que significa registrarse gratuitamente:
-
-![Registrarse gratuitamente en Zoom](images/zoom_sign_up_free.png)
-
-Te redireccionarán a la página de Zoom para que completes un formulario.
-
-Cuando termines, regresa a la aplicación Zoom e inicia sesión usando tus credenciales.
-
-Deberías ver una pantalla como la siguiente:
-
-![Pantalla de inicio de Zoom](images/zoom_home_screen.png)
-
-Ya puedes cerrar la aplicación Zoom.
 
 
 ## Cuenta GitHub
@@ -49,6 +14,8 @@ Ya puedes cerrar la aplicación Zoom.
 :point_right: **[Sube una foto](https://github.com/settings/profile)** y escribe tu nombre correctamente en tu cuenta GitHub. Esto es importante porque nosotros usaremos un tablero de comando interno con tu avatar. Por favor hazlo **ahora** antes de dar un paso más en esta guía.
 
 ![Foto GitHub](images/github_picture.png)
+
+:point_right: **[Habilita la Autenticación de Dos Factores (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub te enviará mensajes de texto con un código cuando intentes iniciar sesión. Esto es importante para la seguridad y también pronto será necesario para contribuir código en GitHub.
 
 
 ## Cómo cerrar aplicaciones en una Mac correctamente
@@ -105,40 +72,32 @@ Te pedirá que confirmes (presionando `Enter`) y también te pedirá la **contra
 
 :warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
 
-:warning: Si ves esta advertencia :point_down:, ejecuta los dos comandos de la sección `Next steps` para añadir Homebrew a tu PATH:
+Si ya tienes Homebrew instalado, el sistema te lo dirá y puedes continuar.
 
-![macOS Homebrew installation warning](images/macos_homebrew_warning.png)
+Una vez que Homebrew haya terminado de instalarse, ejecuta estos dos comandos para agregarlo a tu `PATH`:
 
 ```bash
-# ⚠️ Only execute these commands if you saw this warning ☝
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Si ya tienes Homebrew instalado, el sistema te lo dirá y puedes continuar.
-
-Luego instala algunos programas útiles:
+Asegúrate de tener la última versión:
 
 ```bash
 brew update
 ```
 
-Si obtienes un error como este: `/usr/local must be writable`, ejecuta el código que te mostramos a continuación:
+Luego, instala algunos programas útiles (puedes copiar y pegar todas las líneas de código al mismo tiempo):
 
 ```bash
-sudo chown -R $USER:admin /usr/local
-brew update
-```
-
-Ejecuta el siguiente código en tu terminal (puedes copiar y pegar todas las líneas de código al mismo tiempo):
-
-```bash
-brew upgrade git || brew install git
-brew upgrade gh || brew install gh
-brew upgrade wget || brew install wget
-brew upgrade imagemagick || brew install imagemagick
-brew upgrade jq || brew install jq
-brew upgrade openssl || brew install openssl
+brew upgrade git         || brew install -y git
+brew upgrade gh          || brew install -y gh
+brew upgrade wget        || brew install -y wget
+brew upgrade imagemagick || brew install -y imagemagick
+brew upgrade jq          || brew install -y jq
+brew upgrade openssl     || brew install -y openssl
+brew upgrade tree        || brew install -y tree
+brew upgrade direnv      || brew install -y direnv
 ```
 
 
@@ -178,20 +137,42 @@ code --install-extension ms-vscode.sublime-keybindings
 code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension github.github-vscode-theme
 code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension rebornix.ruby
+code --install-extension shopify.ruby-lsp
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension Rubymaniac.vscode-paste-and-indent
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension anteprimorac.html-end-tag-labels
+code --install-extension marcoroth.herb-lsp
+code --install-extension rayhanw.erb-helpers
 ```
 
 Aquí está la lista de las extensiones que estás instalando:
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### Funciones de IA en VS Code
+
+VS Code incluye muchas y potentes **funciones de IA**, que son una gran herramienta una vez que ya sabes programar.
+
+Dicho esto, depender de la IA demasiado pronto puede ocultar conceptos importantes y dificultar la comprensión de la depuración. Una vez que estés cómodo con los fundamentos, sabrás cuándo y cómo usar la IA de forma eficaz —sin dejar que haga el trabajo por ti.
+
+Para el inicio del bootcamp, desactivaremos estas funciones. Llegado el momento apropiado en el curso, las volveremos a habilitar para que puedas utilizarlas bien.
+
+En **VS Code**:
+
+1. Abramos la "Paleta de comandos" de VS Code: escribe `Cmd-Shift-P`.
+1. Se abrirá la Paleta de comandos: una pequeña caja de texto en la parte superior de la pantalla. Empieza a escribir `aifeatures` hasta que veas "Chat: Learn How to Hide AI features". Haz clic en ella.
+  ![The Command Palette at the top of the screen](images/vscode_find_aifeatures.png)
+1. Esto abrirá la configuración y te mostrará la opción "Disable and hide built-in AI features ...". Marca la casilla delante de esa opción.
+  ![Check the disable option](images/vscode_disable_aifeatures.png)
+
+Más adelante, si quieres **volver a habilitar** las funciones de IA, puedes seguir las mismas instrucciones para desmarcar la casilla.
 
 
 ### Configuración de Live Share
@@ -214,7 +195,7 @@ Eso es todo. ¡Ya puedes continuar!
 
 ## Tema de la Terminal en macOS
 
-Abre una terminal. Haz clic en `Terminal > Preferences` y coloca el tema llamado "Pro" como perfil predeterminado.
+Abre una terminal. Haz clic en `Terminal > Settings` y coloca el tema llamado "Pro" como perfil predeterminado.
 
 ![Pon el tema Pro en la terminal de macOS](images/macos_terminal_pro.png)
 
@@ -250,27 +231,29 @@ CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wik
 
 En esta sección usaremos [GitHub CLI](https://cli.github.com/) para interactuar directamente con GitHub desde la terminal.
 
+Usaremos la GitHub CLI (`gh`) para conectarnos a GitHub utilizando *SSH*, un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+
 Ya debería haberse instalado en tu computadora con los comandos que ejecutaste anteriormente.
 
 Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el comando siguiente en tu terminal:
 
-:warning: **NO edites el `email`**
+:warning: **NO edites el `email`** — Aunque `user:email` parezca un marcador de posición para tu dirección de correo real, no lo es — no lo reemplaces.
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh le hará algunas preguntas:
+`gh` le hará algunas preguntas:
 
-`What is your preferred protocol for Git operations?` Con las flechas, elige `SSH` y presiona `Enter`. SSH es un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+- `Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
 
-`Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
+  Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
 
-Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **PARA LA MAYORÍA DE LOS ESTUDIANTES:** Simplemente presiona `Enter` para omitir. No necesitas una contraseña para el bootcamp y te la pediría cada vez que uses la clave. Sin embargo, hay un riesgo de que si alguien roba tu computadora, pueda subir código a GitHub.
+  - **SI LA SEGURIDAD ES MUY IMPORTANTE PARA TI:** Escribe una contraseña de tu elección y presiona `Enter`. Es _muy_ importante que si introduces una contraseña, la anotes en algún lugar inmediatamente y no la pierdas ni la olvides. Tendrás que introducirla con frecuencia.
 
-`Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
-
-:warning: Cuando escribas tu passphrase, no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu passphrase como su longitud. Simplemente escribe tu passphrase y presiona `Enter` al terminar.
+- `Title for your SSH key`. Puede dejarlo en la propuesta "GitHub CLI", presiona `Enter`.
 
 Obtendrás el siguiente resultado:
 
@@ -341,7 +324,7 @@ gh api user/emails | jq -r '.[].email'
 
 :heavy_check_mark: Si ves una lista de tus emails registrados, puedes continuar :+1:
 
-:x: De lo contrario, por favor haz la [autenticación en GitHub](https://github.com/lewagon/setup/blob/master/macos.es.md#github-cli) nuevamente antes de ejecutar este comando :point_up: again.
+:x: De lo contrario, por favor haz la [autenticación en GitHub](https://github.com/lewagon/setup/blob/master/macos.es.md#github-cli) nuevamente antes de ejecutar este comando :point_up:.
 
 ### Instalación de git
 
@@ -351,7 +334,7 @@ Ejecuta el instalador de `git`:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: Esto te **pedirá** tu nombre (`FirstName LastName`) y tu email.
+:point_up: Esto te **pedirá** tu nombre (`FirstName LastName`) y tu email. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
 
 :warning: **Necesitas** poner uno de los emails que aparecen arriba gracias al comando anterior `gh api ...`. De lo contrario, Kitt no podrá hacerle seguimiento a tu progreso.
 
@@ -360,6 +343,8 @@ Ahora **resetea** tu terminal ejecutando lo siguiente:
 ```bash
 exec zsh
 ```
+
+_Esto recarga tu shell para que tome la nueva configuración._
 
 
 ## rbenv
@@ -390,7 +375,7 @@ exec zsh
 Luego ejecuta esto:
 
 ```bash
-brew install rbenv
+brew install rbenv libyaml
 ```
 
 
@@ -403,13 +388,13 @@ Ahora estás listo para instalar la última versión de [ruby](https://www.ruby-
 Corre este comando, **tomará un tiempo (5-10 minutos)**
 
 ```bash
-rbenv install 3.1.2
+rbenv install 3.3.5
 ```
 
-Cuando la instalación de ruby termine, corre este comando para decirle al sistema que use la versión 3.1.2 por defecto.
+Cuando la instalación de ruby termine, corre este comando para decirle al sistema que use la versión 3.3.5 por defecto.
 
 ```bash
-rbenv global 3.1.2
+rbenv global 3.3.5
 ```
 
 **Reinicia** tu terminal y chequea tu versión Ruby:
@@ -424,7 +409,7 @@ Luego ejecuta esto:
 ruby -v
 ```
 
-:heavy_check_mark: Si ves algo que comience por `ruby 3.1.2p`, entonces puedes continuar +1:
+:heavy_check_mark: Si ves algo que comience por `ruby 3.3.5`, entonces puedes continuar +1:
 
 :x: Si no es el caso, **pídele ayuda a un profesor**.
 
@@ -450,10 +435,16 @@ gem sources -l
 
 En el universo de ruby, a las librerías externas se les llama `gems`: son pedazos de código ruby que puedes descargar y ejecutar en tu computadora. ¡Instalemos algunas!
 
+Primero, vamos a actualizar `bundler`, que es lo que nos permite instalar gemas:
+
+```bash
+gem update bundler
+```
+
 En tu terminal, copia y pega el siguiente comando:
 
 ```bash
-gem install colored faker http pry-byebug rake rails rest-client rspec rubocop-performance sqlite3
+gem install colored faker http pry-byebug rake rails:8.1.1 rest-client rspec rubocop-performance sqlite3:2.8.1 activerecord:8.1.1 ruby-lsp
 ```
 
 :heavy_check_mark: Si obtienes `xx gems installed`, entonces todo está bien :+1:
@@ -498,7 +489,7 @@ Deberías ver una versión. Si no, pídele ayuda a tu profesor.
 Ahora instala node:
 
 ```bash
-nvm install 16.15.1
+nvm install 20.17.0
 ```
 
 Cuando termine la instalación, corre lo siguiente:
@@ -507,7 +498,7 @@ Cuando termine la instalación, corre lo siguiente:
 node -v
 ```
 
-Si ves `v16.15.1`, the installation succeeded :heavy_check_mark: entonces ahora puedes ejecutar lo siguiente:
+Si ves `v20.17.0`, the installation succeeded :heavy_check_mark: entonces ahora puedes ejecutar lo siguiente:
 
 ```bash
 nvm cache clear
@@ -523,9 +514,15 @@ nvm cache clear
 En una terminal, ejecuta los siguientes comandos:
 
 ```bash
-npm install --global yarn
+corepack enable
+yarn set version stable
+```
+
+```bash
 exec zsh
 ```
+
+⚠️ Si ves algún mensaje de error, intenta ejecutar `npm install -g corepack` y luego vuelve a ejecutar los comandos anteriores.
 
 Luego ejecuta este comando:
 
@@ -568,8 +565,12 @@ Vamos a instalarlo ahora.
 Ejecuta los siguientes comandos:
 
 ```bash
-brew install postgresql
-brew services start postgresql
+brew install postgresql@15 libpq
+brew link --force libpq
+```
+
+```bash
+brew services start postgresql@15
 ```
 
 Cuando termines, verifica que funcione:
@@ -581,7 +582,7 @@ psql -d postgres
 Deberías ver un nuevo mensaje como este :point_down:
 
 ```bash
-psql (14.4)
+psql (15.2)
 Type "help" for help.
 
 postgres=#
@@ -652,7 +653,11 @@ La idea es tener Slack abierto todo el día para compartir enlaces útiles / ped
 
 Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba tu cámara y tu micrófono:
 - Abre la aplicación Slack
-- Escribe `/call --test` en la barra de mensaje de cualquier canal y presiona `Enter`
+- Haz clic en tu foto de perfil en la esquina superior derecha
+- Selecciona "Preferencias" en el menú.
+- Haz clic en "Audio y vídeo" en la columna de la izquierda.
+- Debajo de "Solución de problemas", haz clic en "Ejecutar una prueba de audio, vídeo y pantalla compartida". La prueba se abrirá en una nueva ventana.
+- Comprueba que tus dispositivos preferidos de altavoz, micrófono y cámara aparecen en los menús desplegables y haz clic en "Iniciar prueba"
 - Haz clic en el botón verde "Start test"
 
 ![Chequea el micrófono y la cámara con Slack](images/slack_call_test.png)
@@ -668,9 +673,9 @@ Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba
 
 ### Seguridad
 
-Es imperativo proteger tu sesión con una contraseña. Si todavía no es el caso, ve a ` > System Preferences > Users & Groups` y cambia la contraseña de tu computadora. Luego ve a ` > System Preferences > Security > General`. Configura el sistema para que pida la contraseña cada `5 seconds` después de regresar de la opción suspender y cuando se active el protector de pantalla.
+Es imperativo proteger tu sesión con una contraseña. Si todavía no es el caso, ve a ` > System Settings... > Users & Groups` y cambia la contraseña de tu computadora. Luego ve a ` > System Settings... > Lock Screen`. Configura el sistema para que pida la contraseña cada `5 seconds` después de regresar de la opción suspender y cuando se active el protector de pantalla.
 
-También puedes ir a ` > System Preferences > Mission Control` y haz clic en el botón `Hot Corners` abajo a la izquierda. Selecciona la opción donde al hacer clic en la esquina inferior derecha se active el protector de pantalla. De esa manera al dejar tu escritorio podrás bloquear tu pantalla rápidamente poniendo el cursor del ratón en la esquina inferior derecha. En 5 segundos tu Macbook se bloqueará y te pedirá la contraseña para volver a tu sesión.
+También puedes ir a ` > System Settings... > Desktop & Dock` y hacer clic en el botón `Hot Corners...` abajo a la izquierda. Selecciona la opción donde al hacer clic en la esquina inferior derecha se active el protector de pantalla. De esa manera al dejar tu escritorio podrás bloquear tu pantalla rápidamente poniendo el cursor del ratón en la esquina inferior derecha. En 5 segundos tu Macbook se bloqueará y te pedirá la contraseña para volver a tu sesión.
 
 ### Teclado
 
@@ -678,7 +683,7 @@ A medida que te vayas convirtiendo en programador, entenderás que pierdes tiemp
 
 #### Velocidad del teclado
 
-Ve a ` > System Preferences > Keyboard`. Coloca a `Key Repeat` en la posición más rápida (a la derecha) y a `Delay Until Repeat` en la posición más corta (a la derecha).
+Ve a ` > System Settings... > Keyboard`. Coloca a `Key repeat rate` en la posición más rápida (a la derecha) y a `Delay until repeat` en la posición más corta (a la derecha).
 
 #### macOS para hackers
 
@@ -710,12 +715,11 @@ Ancla lo siguiente:
 - VS Code
 - Tu navegador de Internet
 - Slack
-- Zoom
 
 
 ## ¡Fin de la configuración!
 
-Tu computadora está lista para el [curso de Desarrollo Web de Le Wagon](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
+Tu computadora está lista para el [curso de AI Software Development de Le Wagon](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
 
 Disfrútalo, sabemos que te va a ir genial :rocket:
 

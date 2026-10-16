@@ -1,6 +1,7 @@
+
 # Setup instructions
 
-You will find below the instructions to set up your computer for [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time).
+You will find below the instructions to set up your computer for [Le Wagon AI Software Development course](https://www.lewagon.com/web-development-course/full-time).
 
 Please **read them carefully and execute all commands in the following order**.
 
@@ -11,37 +12,6 @@ You can also have a look at [our cheatsheets](https://github.com/lewagon/setup/t
 Let's start :rocket:
 
 
-## Zoom
-
-To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
-
-:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
-
-Go to [zoom.us/download](https://zoom.us/download).
-
-Under **Zoom Client** click the **Download** button.
-
-Open the file you have just downloaded to install the app.
-
-Open the Zoom app.
-
-If you already have a Zoom account, sign in using your credentials.
-
-If not, click on the **Sign Up Free** link:
-
-![Sign Up Free to Zoom](images/zoom_sign_up_free.png)
-
-You will be redirected to Zoom's website to complete a form.
-
-When it's done, go back to the Zoom app and sign in using your credentials.
-
-You should then see a screen like this:
-
-![Zoom Home Screen](images/zoom_home_screen.png)
-
-You can now close the Zoom app.
-
-
 ## GitHub account
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
@@ -50,12 +20,18 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 ![GitHub picture](images/github_picture.png)
 
+:point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
+
 
 ## Windows version
 
 Before we start, we need to check that the version of Windows installed on your computer is compatible with this setup instructions.
 
 ### Windows 10 or Windows 11
+
+> :warning: **Note on Windows 10 and security**
+>
+> The Le Wagon bootcamp setup works on Windows 10. That said, we highly recommend to upgrade to Windows 11. Since October 14th, 2025, Microsoft has ended support for Windows 10, which means it will no longer receive security updates, potentially putting your machine at risk. For more details, read [Microsoft's guide](https://support.microsoft.com/en-us/windows/windows-10-support-has-ended-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281). In case your machine can't run Windows 11, consider switching to Ubuntu.
 
 To be able to set up your computer, you need to have **Windows 10 or Windows 11** installed.
 
@@ -64,65 +40,54 @@ To check your Windows version:
 - Type  `winver`
 - Press `Enter`
 
-:heavy_check_mark: If the first words of this window are **Windows 10 or Windows 11** you're good to go :+1:
+:heavy_check_mark: If the first words of this window are **Windows 11** you're good to go :+1:
 
-:x: If not, you cannot proceed with this setup. You have to upgrade to Windows 10 first :point_down:
+If the first words of this window are **Windows 10**, check the **Version number**:
 
-<details>
-  <summary>Upgrade to Windows 10</summary>
+- :heavy_check_mark: If it says at least `2004`, you are good to go :+1:
 
-  - Download Windows 10 from [Microsoft](https://www.microsoft.com/software-download/windows10ISO)
-  - Install it. It should take roughly an hour, but this depends on your computer.
-  - When the installation is over, execute the commands above :point_up: to check that you now have **Windows 10**.
-</details>
+- :x: If it is below `2004`, you need to run an update.
 
-:information_source: [Windows 11 upgrade is rolling out now](https://www.microsoft.com/en-us/windows/get-windows-11), which means it may or may not be available for your computer just yet.
+- <details>
+  <summary>How to install updates?</summary>
 
-:warning: **If you have Windows 10 installed, you don't need to upgrade to Windows 11 to proceed with this setup**.
-
-### Latest updates
-
-Once you're sure that you're using Windows 10 or 11, you need to install all the latest updates.
-
-Open Windows Update:
-- Press `Windows` + `R`
-- Type  `ms-settings:windowsupdate`
-- Press `Enter`
-- Click on `Check updates`
-
-:heavy_check_mark: If you see a green check mark and the message "You're up to date", you're good to go :+1:
-
-:warning: If you have a red exclamation mark and the message "Update available", please install them and repeat the process until it says that you are up to date :loop:
-
-:x: If you have an error message about Windows not being able to apply updates, please **contact a teacher**.
-
-<details>
-  <summary>Activate Windows Update Service to fix Updates</summary>
-
-  Some antiviruses and pieces of software deactivate the Update service we need, resulting in the error you see. Let's fix that!
+  Open Windows Update:
   - Press `Windows` + `R`
-  - Type  `services.msc`
+  - Type  `ms-settings:windowsupdate`
   - Press `Enter`
-  - Double Click `Windows Update Service`
-  - Set its `Startup` to `Automatic`
-  - Click on `Start`
-  - Click on `Ok`
-  Then let's try updates again!
-</details>
+  - Click on `Check updates`
 
-### Minimum version
+  :heavy_check_mark: If you see a green check mark and the message "You're up to date", you're good to go :+1:
 
-Some of the tools we need to install have been release with the `1903` version **or above** of Windows 10 so we need to make sure you have at least this one.
+  :warning: If you have a red exclamation mark and the message "Update available", please install them and repeat the process until it says that you are up to date :loop:
 
-- Press `Windows` + `R`
-- Type  `winver`
-- Press `Enter`
+  :x: If you have an error message about Windows not being able to apply updates, please **contact a teacher**.
 
-Check the **Version number**:
+  <details>
+    <summary>Activate Windows Update Service to fix Updates</summary>
 
-:heavy_check_mark: If it says at least `1903`, you are good to go :+1:
+    Some antiviruses and pieces of software deactivate the Update service we need, resulting in the error you see. Let's fix that!
+    - Press `Windows` + `R`
+    - Type  `services.msc`
+    - Press `Enter`
+    - Double Click `Windows Update Service`
+    - Set its `Startup` to `Automatic`
+    - Click on `Start`
+    - Click on `Ok`
+    Then let's try updates again!
+  </details>
 
-:x: If it is below `1903`, please **contact a teacher**.
+  Check the version number again:
+
+  - Press `Windows` + `R`
+  - Type  `winver`
+  - Press `Enter`
+
+  :heavy_check_mark: If it says at least `2004`, you are good to go :+1:
+
+  :x: If it is below `2004`, **contact a TA**.
+
+  </details>
 
 
 ## Virtualization
@@ -168,21 +133,17 @@ For many computers, this is already the case. Let's check:
 
 WSL is the development environment we are using to run Ubuntu. You can learn more about WSL [here](https://docs.microsoft.com/en-us/windows/wsl/faq).
 
-:information_source: The following instructions depend on your version of Windows. Please execute only the instructions corresponding to your version :point_down:
+We will install WSL 2 and Ubuntu in one command through the Windows Command Prompt.
 
-### Windows 11
-
-If you are running Windows 11, we will install WSL 2 and Ubuntu in one command through the Windows Terminal.
-
-:warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows Terminal** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
+:warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows Command Prompt** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
 
 - Press `Windows` + `R`
-- Type  `wt`
+- Type  `cmd`
 - Press **`Ctrl` + `Shift` + `Enter`**
 
 :warning: You may have to accept the UAC confirmation about the privilege elevation.
 
-A blue terminal window will appear:
+A black terminal window will appear:
 - Copy the following command (`Ctrl` + `C`)
 - Paste it into the terminal window (`Ctrl` + `V` or by right-clicking in the window)
 - Run it by pressing `Enter`
@@ -193,13 +154,13 @@ wsl --install
 
 :heavy_check_mark: If the command ran without any error, please restart your computer and continue below :+1:
 
-:x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**
+:x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**.
 
-### Windows 10
+<details>
+<summary>Troubleshooting for Windows 10 (only if needed, check with a TA)
+</summary>
 
-#### Install WSL 1
-
-If you are running Windows 10, we will first install WSL 1 through the PowerShell Terminal.
+#### For Windows 10 < 2004: install WSL 1 first
 
 :warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows PowerShell** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
 
@@ -230,7 +191,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 :x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**
 
-#### Upgrade to WSL 2
+#### For Windows 10 users running WSL 1: Upgrade to WSL 2
 
 If you are running Windows 10, we will then upgrade WSL to version 2.
 
@@ -248,7 +209,7 @@ Once your computer has restarted, we need to download the WSL2 installer.
 
 :x: If you encounter the error "This update only applies to machines with the Windows Subsystem for Linux", **right click** on the program and select `uninstall`; you shall be able to install it normally this time.
 
-#### Make WSL 2 the default Windows Subsystem for Linux
+#### For Windows 10 users running WSL 1: Make WSL 2 the default Windows Subsystem for Linux
 
 If you are running Windows 10, we will set WSL default version to 2.
 
@@ -281,18 +242,26 @@ wsl --set-default-version 2
   :information_source: If you are running Windows 10 **Home edition**, Hyper-V feature is not available for your operating system. It's non-blocking and you can still continue to follow the instructions below :ok_hand:
 </details>
 
+</details>
+
 
 ## Ubuntu
 
 ### Installation
 
-:information_source: The following instructions depend on your version of Windows. Please execute only the instructions corresponding to your version :point_down:
+After restarting you computer, you should see a terminal window saying WSL is resuming the Ubuntu installation process. When it's done, Ubuntu will be launched.
 
-#### Windows 11
+If the Ubuntu installation did not resume, try it again: 
+- Press `Windows` + `R`
+- Type  `cmd`
+- Press **`Ctrl` + `Shift` + `Enter`**
+- Run `wsl --install`
 
-If you are running Windows 11, after restarting you computer, you should see a terminal window saying WSL is resuming the Ubuntu installation process. When it's done, Ubuntu will be launched.
 
-#### Windows 10
+<details>
+<summary>Troubleshooting for Windows 10 (only if needed, check with a TA)
+</summary>
+
 
 If you are running Windows 10, let's install Ubuntu throught the Microsoft Store:
 
@@ -318,6 +287,8 @@ If you are running Windows 10, let's install Ubuntu throught the Microsoft Store
 
 Once the installation is finished, the `Get` button becomes a `Open` button: click on it.
 
+</details>
+
 ### First launch
 
 At first launch, you will be asked some information:
@@ -331,56 +302,17 @@ At first launch, you will be asked some information:
 
 :warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `Enter`.
 
-You can close the Ubuntu window now that it is installed on your computer.
+### Check your username
 
-### Check the WSL version of Ubuntu
-
-- Press `Windows` + `R`
-- Type  `cmd`
-- Press `Enter`
-
-Type the following command:
+Type this in the Ubuntu terminal:
 
 ```bash
-wsl -l -v
+whoami
 ```
 
-:heavy_check_mark: If the version of Ubuntu WSL is 2, you are good to go :+1:
+It should return the username you chose before.
 
-:x: If the version of Ubuntu WSL is 1, we will need to convert it to version 2.
-
-<details>
-  <summary>Convert Ubuntu WSL V1 to V2</summary>
-
-  In the Command Prompt window, type:
-
-  ```bash
-  wsl --set-version Ubuntu 2
-  ```
-
-  :heavy_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
-
-  :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
-</details>
-
-<details>
-  <summary>Check for Uncompressed Files</summary>
-
-  - Press `Windows` + `R`
-  - Type  `%localappdata%\Packages`
-  - Press `Enter`
-  - Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
-  - Right Click on the `LocalState` folder
-  - Click on `Properties`
-  - Click on `Advanced`
-  - Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
-
-  Apply changes to this folder only and try to convert the Ubuntu WSL version again.
-
-  :x: If the conversion still does not work, please **contact a teacher**.
-</details>
-
-You can now close this terminal window.
+:x: It if says `root`, **contact a TA** before continuing!
 
 
 ## Visual Studio Code
@@ -416,7 +348,7 @@ Then open VS Code from your terminal:
 code .
 ```
 
-:heavy_check_mark: If you see `WSL: Ubuntu` in a green box in the bottom left corner of the VS Code window, you're good to go :+1:
+:heavy_check_mark: If you see `WSL: Ubuntu` in the bottom left corner of the VS Code window, you're good to go :+1:
 
 ![WSL Ubuntu Remote](images/windows_remote_wsl.png)
 
@@ -431,7 +363,10 @@ code .
 
 If you are running Windows 11, the Windows Terminal is already installed and you can proceed to the next section :point_down:
 
-If you are running Windows 10, let's install Windows Terminal, a real modern terminal:
+If you are running Windows 10, let's install Windows Terminal, a real modern terminal.
+
+<details>
+<summary><strong>Windows 10</strong>: Install Windows Terminal</summary>
 
 - Click on `Start`
 - Type  `Microsoft Store`
@@ -456,6 +391,8 @@ If you are running Windows 10, let's install Windows Terminal, a real modern ter
 
 Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
 
+</details>
+
 ### Ubuntu as the default terminal
 
 Let's make Ubuntu the default terminal of your Windows Terminal application.
@@ -472,13 +409,13 @@ It should open the terminal settings:
 
 You may see an orange circle rather than a penguin as the logo for Ubuntu.
 
-We have circle in red the part you will change:
+We have circled in red the part you need to add:
 
 ![Windows Terminal JSON settings file](images/windows_terminal_settings_json.png)
 
-First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
-- Locate the entry with both `"name": "Ubuntu",` and `"hidden": false,`
-- Add the following line after it:
+First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one.
+
+- Place this line inside the { } block that contains "name": "Ubuntu" (like in the screenshot):
 
 ```bash
 "commandline": "wsl.exe ~",
@@ -486,12 +423,13 @@ First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory inst
 
 :warning: Do not forget the comma at the end of the line!
 
-Then, let's disable warning for copy-pasting commands between Windows and Ubuntu:
-- Locate the line `"defaultProfile": "{2c4de342-...}"`
+Then, let's disable warnings for copy-pasting commands between Windows and Ubuntu:
+
+- Locate the line "defaultProfile": "{2c4de342-...}"
 - Add the following line after it:
 
 ```bash
-"multiLinePasteWarning": false,
+"warning.multiLinePaste": false,
 ```
 
 :warning: Do not forget the comma at the end of the line!
@@ -515,44 +453,45 @@ Copy-paste the following commands in your terminal:
 
 ```bash
 code --install-extension ms-vscode.sublime-keybindings
-```
-
-```bash
 code --install-extension emmanuelbeziat.vscode-great-icons
-```
-
-```bash
 code --install-extension github.github-vscode-theme
-```
-
-```bash
 code --install-extension MS-vsliveshare.vsliveshare
-```
-
-```bash
-code --install-extension rebornix.ruby
-```
-
-```bash
+code --install-extension shopify.ruby-lsp
 code --install-extension dbaeumer.vscode-eslint
-```
-
-```bash
 code --install-extension Rubymaniac.vscode-paste-and-indent
-```
-
-```bash
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension anteprimorac.html-end-tag-labels
+code --install-extension rayhanw.erb-helpers
 ```
 
 Here is a list of the extensions you are installing:
+
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### VS Code AI Features
+
+VS Code includes many powerful **AI features**, which are a great tool once you already know how to code.
+
+That said, relying on AI too early can hide important concepts and make debugging harder to understand. Once you’re comfortable with the fundamentals, you’ll know when and how to use AI effectively — without letting it do the thinking for you.
+
+For the start of the bootcamp, we’ll disable these features. At the right point in the course, we’ll reenable them so you can put them to good use.
+
+In **VS Code**:
+
+1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P`.
+1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
+   ![The Command Palette at the top of the screen](images/vscode_find_aifeatures.png)
+1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
+   ![Check the disable option](images/vscode_disable_aifeatures.png)
+
+Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
 
 ### Live Share configuration
@@ -575,6 +514,36 @@ That's it, you're good to go!
 
 ## Command line tools
 
+### Check the locale
+
+The locale is a mechanism allowing to customize programs to your language and country.
+
+Let's verify that the default locale is set to English, please type this in the Ubuntu terminal:
+
+```bash
+locale
+```
+
+If the output does not contain `LANG=en_US.UTF-8`, run the following command in a Ubuntu terminal to install the english locale:
+
+```bash
+sudo locale-gen en_US.UTF-8
+```
+
+If after, you receive a warning (`bash: warning: setlocale: LC_ALL: cannot change locale (en_US.utf-8)`) in your terminal, please do the following:
+
+<details>
+  <summary>Generate locale</summary>
+
+Please, run this lines in your terminal.
+
+```bash
+sudo update-locale LANG=en_US.UTF8
+sudo apt-get update
+sudo apt-get install language-pack-en language-pack-en-base manpages
+```
+</details>
+
 ### Zsh & Git
 
 Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
@@ -590,7 +559,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl git imagemagick jq unzip vim zsh tree
+sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
 ```
 
 These commands will ask for your password: type it in.
@@ -667,19 +636,32 @@ To be sure that you can interact with your browser installed on Windows from you
     ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
   ```
 
-  If you get an error like `ls: cannot access...` Run the following commands:
+  Did you get an error like `ls: cannot access...`?
+
+<details>
+  <summary>Yes, I had an error</summary>
+
+Run the following commands:
 
   ```bash
     echo "export BROWSER=\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
     echo "export GH_BROWSER=\"'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
   ```
+</details>
 
-  Else run:
+<details>
+  <summary>No, everything was fine</summary>
+
+  Run the following commands:
 
   ```bash
     echo "export BROWSER=\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
     echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
   ```
+</details>
+
+---
+
 </details>
 
 <details>
@@ -691,19 +673,33 @@ To be sure that you can interact with your browser installed on Windows from you
     ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
   ```
 
-  If you get an error like `ls: cannot access...` Run the following commands:
+  Did you get an error like `ls: cannot access...`?
+
+<details>
+  <summary>Yes, I had an error</summary>
+
+  Run the following commands:
 
   ```bash
     echo "export BROWSER=\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
     echo "export GH_BROWSER=\"'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
   ```
 
-  Else run:
+</details>
+
+<details>
+  <summary>No, everything was fine</summary>
+
+  Run the following commands:
 
   ```bash
     echo "export BROWSER=\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
     echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
   ```
+</details>
+
+---
+
 </details>
 
 <details>
@@ -712,9 +708,12 @@ To be sure that you can interact with your browser installed on Windows from you
   Run the commands:
 
   ```bash
-    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
+    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"" >> ~/.zshrc
     echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'\"" >> ~/.zshrc
   ```
+
+---
+
 </details>
 
 Restart your terminal.
@@ -746,25 +745,27 @@ In this section, we will use [GitHub CLI](https://cli.github.com/) to interact w
 
 It should already be installed on your computer from the previous commands.
 
+We will use the GitHub CLI (`gh`) to connect to GitHub using *SSH*, a protocol to log in using SSH keys instead of the well known username/password pair.
+
 First in order to **login**, copy-paste the following command in your terminal:
 
-:warning: **DO NOT edit the `email`**
+:warning: **DO NOT edit the `email`** — Even though `user:email` looks like a placeholder for your actual email address, it isn't — do not replace it.
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh will ask you few questions:
+`gh` will ask you few questions:
 
-`What is your preferred protocol for Git operations?` With the arrows, choose `SSH` and press `Enter`. SSH is a protocol to log in using SSH keys instead of the well known username/password pair.
+- `Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
 
-`Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
+  If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
 
-If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **FOR MOST PEOPLE:** Just press `Enter` to skip. You don't need a passphrase for the bootcamp and it would prompt you every time you use the key. There is a risk, however, that if someone steals your laptop, they could then push to GitHub.
+  - **IF SECURITY IS REALLY IMPORTANT TO YOU:** Enter a passphrase of your choice and press `Enter`. It's _really_ important that if you enter a passphrase, you write it down somewhere immediately and do not lose/forget it. You will need to enter this frequently.
 
-`Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
-
-:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `Enter`.
+- `Title for your SSH key`. You can leave it at the proposed "GitHub CLI", press `Enter`.
 
 You will then get the following output:
 
@@ -859,7 +860,8 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 :point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
 
-:warning: You **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress.
+:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
+
 
 Please now **reset** your terminal by running:
 
@@ -867,22 +869,7 @@ Please now **reset** your terminal by running:
 exec zsh
 ```
 
-
-## Disable SSH passphrase prompt
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
-
-First, open the `.zshrc` file:
-
-```bash
-code ~/.zshrc
-```
-
-Then:
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` at the end of the plugins list
-
-:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
+_This reloads your shell so it picks up the new configuration._
 
 
 ## rbenv
@@ -901,7 +888,7 @@ rm -rf ~/.rbenv
 Then in the terminal, run:
 
 ```bash
-sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
+sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev libyaml-dev
 ```
 
 ```bash
@@ -926,14 +913,14 @@ Now, you are ready to install the latest [ruby](https://www.ruby-lang.org/en/) v
 Run this command, it will **take a while (5-10 minutes)**
 
 ```bash
-rbenv install 3.1.2
+rbenv install 3.3.5
 ```
 
 Once the ruby installation is done, run this command to tell the system
-to use the 3.1.2 version by default.
+to use the 3.3.5 version by default.
 
 ```bash
-rbenv global 3.1.2
+rbenv global 3.3.5
 ```
 
 **Reset** your terminal and check your Ruby version:
@@ -948,7 +935,7 @@ Then run:
 ruby -v
 ```
 
-:heavy_check_mark: If you see something starting with `ruby 3.1.2p` then you can proceed :+1:
+:heavy_check_mark: If you see something starting with `ruby 3.3.5` then you can proceed :+1:
 
 :x: If not, **ask a teacher**
 
@@ -974,10 +961,16 @@ gem sources -l
 
 In the ruby world, we call external libraries `gems`: they are pieces of ruby code that you can download and execute on your computer. Let's install some!
 
+First, we'll update `bundler`, which is what lets us install gems:
+
+```bash
+gem update bundler
+```
+
 In your terminal, copy-paste the following command:
 
 ```bash
-gem install colored faker http pry-byebug rake rails rest-client rspec rubocop-performance sqlite3
+gem install colored faker http pry-byebug rake rails:8.1.1 rest-client rspec rubocop-performance sqlite3:2.8.1 activerecord:8.1.1 ruby-lsp
 ```
 
 :heavy_check_mark: If you get `xx gems installed`, then all good :+1:
@@ -1025,7 +1018,7 @@ You should see a version. If not, ask a teacher.
 Now let's install node:
 
 ```bash
-nvm install 16.15.1
+nvm install 20.17.0
 ```
 
 When the installation is finished, run:
@@ -1034,7 +1027,7 @@ When the installation is finished, run:
 node -v
 ```
 
-If you see `v16.15.1`, the installation succeeded :heavy_check_mark: You can then run:
+If you see `v20.17.0`, the installation succeeded :heavy_check_mark: You can then run:
 
 ```bash
 nvm cache clear
@@ -1050,8 +1043,11 @@ nvm cache clear
 In a terminal, run the following commands:
 
 ```bash
-npm install --global yarn
+corepack enable
+yarn set version stable
 ```
+
+⚠️ If you see any error messages, try running `npm install -g corepack` and then run the commands above again.
 
 ```bash
 exec zsh
@@ -1075,7 +1071,7 @@ In a few weeks, we'll talk about databases and SQL. [SQLite](https://sqlite.org/
 In a terminal, execute the following commands:
 
 ```bash
-sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install sqlite3 libsqlite3-dev pkg-config
 ```
 
 Then run the following command:
@@ -1109,6 +1105,8 @@ sudo /etc/init.d/postgresql start
 sudo -u postgres psql --command "CREATE ROLE \"`whoami`\" LOGIN createdb superuser;"
 ```
 
+_📝 If you get an error saying `could not change directory to "/home/your_name": Permission denied` that is totally fine, and there's no need to worry 💆 If, on the first run, it says `CREATE ROLE` in the end all worked fine._
+
 You can configure PostgreSQL to autostart, so you don't have to execute `sudo /etc/init.d/postgresql start` each time you open a new terminal:
 
 ```bash
@@ -1125,7 +1123,7 @@ echo "sudo /etc/init.d/postgresql start" >> ~/.zshrc
 
 Open a new terminal.
 
-:heavy_check_mark: If you see a `* Starting PostgreSQL 14 database server` message, you're good to go :+1:
+:heavy_check_mark: If you see a `* Starting postgresql (via systemctl): postgresql.service` OR `* Starting PostgreSQL 14 database server` message, you're good to go :+1:
 
 :x: If not, **contact a teacher**.
 
@@ -1153,23 +1151,17 @@ curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb 
 
 ## Kitt
 
-:warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
-
-If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
-
-Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
-
-Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
-
-Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
+You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform). When submitting your onboarding form on Kitt, you should have received two additional invitations:
 
 - One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
+If you haven't, please contact your teaching team.
+
 
 ## Slack
 
-[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
+[Slack](https://slack.com/) is a communication platform pretty popular in the tech industry.
 
 ### Installation
 
@@ -1190,8 +1182,11 @@ The idea is that you'll have Slack open all day, so that you can share useful li
 
 To ensure that everything is working fine for video calls, let's test your camera and microphone:
 - Open the Slack app
-- In any channel message bar type `/call --test` and press `Enter`
-- Click on the "Start test" green button
+- Click your profile picture in the top right.
+- Select `Preferences` from the menu.
+- Click `Audio & video` in the left-side column.
+- Below `Troubleshooting`, click `Run an audio, video and screensharing test`. The test will open in a new window.
+- Check that your preferred speaker, microphone and camera devices appear in the drop-down menus, then click `Start test`.
 
 ![Check microphone and webcam with Slack](images/slack_call_test.png)
 
@@ -1253,12 +1248,11 @@ You must pin:
 - VS Code
 - Your Internet browser
 - Slack
-- Zoom
 
 
 ## Setup completed!
 
-Your computer is now all set for [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
+Your computer is now all set for [Le Wagon AI Software Development course](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
 
 Enjoy the bootcamp, you will nail it :rocket:
 

@@ -8,7 +8,10 @@ During this setup you will be asked to **quit and re-open** applications multipl
 
 ## Command Line Tools
 
-Open a new terminal, copy-paste the following command and hit `Enter`:
+Open a new terminal window with [Spotlight](https://support.apple.com/en-gb/HT204014) (you can access Spotlight with `Cmd + Space`, and then type `Terminal` and `Enter`):
+![Open Terminal on macOS](images/macos_open_terminal.png)
+
+Copy-paste the following command and hit `Enter`:
 
 ```bash
 xcode-select --install
